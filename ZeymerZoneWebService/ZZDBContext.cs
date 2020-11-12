@@ -10,6 +10,7 @@ namespace ZeymerZoneWebService
         public ZZDBContext()
             : base("name=ZZDBContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Kalender> Kalenders { get; set; }
