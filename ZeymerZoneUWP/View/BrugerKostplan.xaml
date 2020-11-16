@@ -9,6 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
+            <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_3"/>
+            <Button Content="Profil" Margin="125,0,0,0" Click="Button_Click"/>
+            <Button Content="Kostplan" Margin="225,0,0,0" Click="Button_Click_1"/>
+            <Button Content="Log" Margin="325,0,0,0" Click="Button_Click_2"/>
+        </Grid>
     </Grid>
 </Page>
