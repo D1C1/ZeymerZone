@@ -1,3 +1,5 @@
+using ZeymerZoneUWP;
+
 namespace ZeymerZoneWebService
 {
     using System;

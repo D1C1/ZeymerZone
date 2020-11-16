@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions
+namespace ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

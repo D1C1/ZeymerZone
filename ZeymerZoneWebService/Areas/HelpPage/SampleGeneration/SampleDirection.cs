@@ -1,4 +1,4 @@
-namespace ZeymerZoneWebService.Areas.HelpPage
+namespace ZeymerZoneUWP.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

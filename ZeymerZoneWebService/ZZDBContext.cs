@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
+using ZeymerZoneUWP;
 
 namespace ZeymerZoneWebService
 {
@@ -10,7 +11,7 @@ namespace ZeymerZoneWebService
         public ZZDBContext()
             : base("name=ZZDBContext")
         {
-            base.Configuration.ProxyCreationEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Kalender> Kalenders { get; set; }

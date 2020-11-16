@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions;
-using ZeymerZoneWebService.Areas.HelpPage.Models;
+using ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions;
+using ZeymerZoneUWP.Areas.HelpPage.Models;
 
-namespace ZeymerZoneWebService.Areas.HelpPage.Controllers
+namespace ZeymerZoneUWP.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

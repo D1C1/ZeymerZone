@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace ZeymerZoneWebService.Areas.HelpPage
+namespace ZeymerZoneUWP.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

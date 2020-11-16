@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions;
-using ZeymerZoneWebService.Areas.HelpPage.Models;
+using ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions;
+using ZeymerZoneUWP.Areas.HelpPage.Models;
 
-namespace ZeymerZoneWebService.Areas.HelpPage
+namespace ZeymerZoneUWP.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

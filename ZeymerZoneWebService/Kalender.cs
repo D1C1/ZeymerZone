@@ -1,10 +1,11 @@
-namespace ZeymerZoneWebService
+namespace ZeymerZoneUWP
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using ZeymerZoneWebService;
 
     [Table("Kalender")]
     public partial class Kalender

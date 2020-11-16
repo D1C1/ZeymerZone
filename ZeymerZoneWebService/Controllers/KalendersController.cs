@@ -10,7 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using ZeymerZoneWebService;
 
-namespace ZeymerZoneWebService.Controllers
+namespace ZeymerZoneUWP.Controllers
 {
     public class KalendersController : ApiController
     {

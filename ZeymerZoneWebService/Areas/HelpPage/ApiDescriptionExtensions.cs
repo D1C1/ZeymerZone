@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace ZeymerZoneWebService.Areas.HelpPage
+namespace ZeymerZoneUWP.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

@@ -1,4 +1,4 @@
-namespace ZeymerZoneWebService
+namespace ZeymerZoneUWP
 {
     using System;
     using System.Collections.Generic;

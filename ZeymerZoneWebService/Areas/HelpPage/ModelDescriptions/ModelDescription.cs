@@ -1,6 +1,6 @@
 using System;
 
-namespace ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions
+namespace ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.
