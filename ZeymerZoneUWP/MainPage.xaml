@@ -9,6 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
+            <Button Content="Home" Margin="25,0,0,0"/>
+        </Grid>
+        <Grid Margin="0,0,0,138">
+            <TextBlock HorizontalAlignment="Left" Margin="157,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="121" FontSize="16" FontWeight="Bold"><Run Text="Welcome to the "/><LineBreak/><Run/><LineBreak/><Run Text="ZeymerZone"/></TextBlock>
+        </Grid>
     </Grid>
 </Page>
