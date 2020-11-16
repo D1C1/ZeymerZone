@@ -8,5 +8,9 @@ namespace ZeymerZoneUWP
 {
     public class KostplanViewModel
     {
+        public KostplanViewModel()
+        {
+
+        }
     }
 }

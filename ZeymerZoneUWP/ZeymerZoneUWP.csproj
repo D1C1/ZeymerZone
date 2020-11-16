@@ -119,6 +119,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Kalender.cs" />
+    <Compile Include="Model\Konsultation.cs" />
+    <Compile Include="Model\Kostplan.cs" />
+    <Compile Include="Model\Kunde.cs" />
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\Vejleder.cs" />
     <Compile Include="ViewModel\BrugerViewModel.cs" />
     <Compile Include="ViewModel\KostplanViewModel.cs" />
     <Compile Include="ViewModel\LogViewModel.cs" />
@@ -212,9 +218,7 @@
       <Version>12.0.3</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
