@@ -15,7 +15,11 @@
             <Button Content="Kostplan" Margin="225,0,0,0" Click="Button_Click_1"/>
             <Button Content="Log" Margin="325,0,0,0" Click="Button_Click_2"/>
         </Grid>
-        <TextBox Text="{x:Bind Path=BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" PlaceholderText="Navn" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"/>
-        <Button Command="{x:Bind Mode=OneWay, Path=BrugerVM.HentKunde}" Content="Hent" Margin="0,433,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Grid Margin="0,0,0,78"/>
+        <StackPanel Margin="0,140,0,453">
+            <TextBox TextAlignment="Center" Text="{x:Bind Mode=TwoWay, Path=BrugerVM.CurrentKunde.Kunde_navn, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" PlaceholderText="Navn" TextWrapping="Wrap"/>
+            <TextBox TextAlignment="Center"  Text="{x:Bind Mode=TwoWay, Path=BrugerVM.CurrentKunde.Kunde_email, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" PlaceholderText="email" TextWrapping="Wrap"/>
+            <TextBox TextAlignment="Center"  Text="{x:Bind Mode=TwoWay, Path=BrugerVM.CurrentKunde.Kunde_tlfnr, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" PlaceholderText="telefonnr" TextWrapping="Wrap"/>
+        </StackPanel>
     </Grid>
 </Page>

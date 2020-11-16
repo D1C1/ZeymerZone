@@ -45,8 +45,9 @@ namespace ZeymerZoneUWP
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if (true)
+            if (true)// hvis vi kan logge ind 
             {
+                // gem kunde info som current kunde på drev
                 this.Frame.Navigate(typeof(MainPageLoggetInd));
             }
         }
