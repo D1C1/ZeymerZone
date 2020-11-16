@@ -22,10 +22,10 @@ namespace ZeymerZoneUWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPageViewModel MPViewModel { get; set; }
+        
         public MainPage()
         {
-            //MPViewModel = new MainPageViewModel();
+            
             this.InitializeComponent();
         }
 
