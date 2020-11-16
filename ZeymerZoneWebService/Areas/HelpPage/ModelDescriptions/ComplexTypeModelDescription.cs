@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions
+namespace ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

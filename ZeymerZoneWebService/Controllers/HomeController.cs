@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ZeymerZoneUWP.Controllers
+namespace ZeymerZoneWebService.Controllers
 {
     public class HomeController : Controller
     {

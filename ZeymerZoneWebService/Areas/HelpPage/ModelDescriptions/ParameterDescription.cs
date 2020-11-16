@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions
+namespace ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

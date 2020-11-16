@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions
+namespace ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

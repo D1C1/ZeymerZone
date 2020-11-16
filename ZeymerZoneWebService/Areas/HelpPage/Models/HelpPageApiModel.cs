@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions;
+using ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions;
 
-namespace ZeymerZoneUWP.Areas.HelpPage.Models
+namespace ZeymerZoneWebService.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

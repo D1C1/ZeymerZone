@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ZeymerZoneUWP
+namespace ZeymerZoneWebService
 {
     public class FilterConfig
     {

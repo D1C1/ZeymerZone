@@ -1,6 +1,6 @@
 using System;
 
-namespace ZeymerZoneUWP.Areas.HelpPage.ModelDescriptions
+namespace ZeymerZoneWebService.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

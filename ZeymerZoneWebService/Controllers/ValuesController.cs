@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ZeymerZoneUWP.Controllers
+namespace ZeymerZoneWebService.Controllers
 {
     public class ValuesController : ApiController
     {
