@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ZeymerZoneUWP
 {
     public class BrugerViewModel : INotifyPropertyChanged
@@ -41,38 +42,10 @@ namespace ZeymerZoneUWP
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void Hentkunde()//controllernavn tabelnavn Primarykey
+        private void Hentkunde()
         {
-            using (var client = new HttpClient(handler))
-            {
-                //Initialize client
-                client.BaseAddress = new Uri(serverUrl);
-                client.DefaultRequestHeaders.Clear();
+            CurrentKunde = PersistencyService<Kunde>.HentData("kundes",1).Result;
 
-                //Request JSON format
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                try
-                {
-                    Console.WriteLine("getting");
-                    //Get all the vejleders from the database
-                    var getVejledersResponse = client.GetAsync("api/Kundes/1").Result;
-
-                    //Check response -> throw exception if NOT successful
-                    getVejledersResponse.EnsureSuccessStatusCode();
-                    
-
-                    //Get the vejleders as a IEnumerable
-                    var kunde = getVejledersResponse.Content.ReadAsAsync<Kunde>().Result;
-
-                    //List vejleders on the screen
-                    CurrentKunde = kunde;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-            }
         }
     }
 }

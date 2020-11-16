@@ -125,6 +125,7 @@
     <Compile Include="Model\Kunde.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\Vejleder.cs" />
+    <Compile Include="PersistencyService.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\BrugerViewModel.cs" />
     <Compile Include="ViewModel\KostplanViewModel.cs" />
