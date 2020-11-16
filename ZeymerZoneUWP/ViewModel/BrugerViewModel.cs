@@ -41,7 +41,7 @@ namespace ZeymerZoneUWP
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void Hentkunde()
+        private void Hentkunde()//controllernavn tabelnavn Primarykey
         {
             using (var client = new HttpClient(handler))
             {
