@@ -25,13 +25,13 @@ namespace ZeymerZoneUWP
         public MainPageViewModel MPViewModel { get; set; }
         public MainPage()
         {
-            //MPViewModel = new MainPageViewModel();
+            MPViewModel = new MainPageViewModel();
             this.InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Profilside));
+            this.Frame.Navigate(typeof(LoginPage));
         }
     }
 }
