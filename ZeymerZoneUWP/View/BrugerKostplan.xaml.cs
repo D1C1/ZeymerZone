@@ -22,8 +22,10 @@ namespace ZeymerZoneUWP
     /// </summary>
     public sealed partial class BrugerKostplan : Page
     {
+       public KostplanViewModel KostplanVM { get; set; }
         public BrugerKostplan()
         {
+            KostplanVM = new KostplanViewModel();
             this.InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)

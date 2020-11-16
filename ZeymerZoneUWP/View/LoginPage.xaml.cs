@@ -22,8 +22,10 @@ namespace ZeymerZoneUWP
     /// </summary>
     public sealed partial class LoginPage : Page
     {
+        public BrugerViewModel BrugerVM { get; set; }
         public LoginPage()
         {
+            BrugerVM = new BrugerViewModel();
             this.InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)

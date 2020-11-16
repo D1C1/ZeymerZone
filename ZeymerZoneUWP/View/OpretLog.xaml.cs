@@ -22,8 +22,10 @@ namespace ZeymerZoneUWP
     /// </summary>
     public sealed partial class OpretLog : Page
     {
+        public LogViewModel LogVM { get; set; }
         public OpretLog()
         {
+            LogVM = new LogViewModel();
             this.InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
