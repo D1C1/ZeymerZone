@@ -134,7 +134,7 @@
     <Compile Include="View\OpretLog.xaml.cs">
       <DependentUpon>OpretLog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Profilside.xaml.cs">
+    <Compile Include="View\Profilside.xaml.cs">
       <DependentUpon>Profilside.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
@@ -186,7 +186,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Profilside.xaml">
+    <Page Include="View\Profilside.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -40,6 +40,14 @@ namespace ZeymerZoneUWP
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (true)
+            {
+                this.Frame.Navigate(typeof(MainPageLoggetInd));
+            }
+        }
     }
 }
 
