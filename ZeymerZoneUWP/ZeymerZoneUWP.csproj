@@ -119,6 +119,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BrugerKostplan.xaml.cs">
+      <DependentUpon>BrugerKostplan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BrugerLogs.xaml.cs">
+      <DependentUpon>BrugerLogs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPageLoggetInd.xaml.cs">
+      <DependentUpon>MainPageLoggetInd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Opretbruger.xaml.cs">
+      <DependentUpon>Opretbruger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpretLog.xaml.cs">
+      <DependentUpon>OpretLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profilside.xaml.cs">
+      <DependentUpon>Profilside.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -148,6 +166,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\BrugerKostplan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BrugerLogs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainPageLoggetInd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Opretbruger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpretLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profilside.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
