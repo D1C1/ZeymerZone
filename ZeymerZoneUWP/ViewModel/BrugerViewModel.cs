@@ -22,10 +22,10 @@ namespace ZeymerZoneUWP
 
         public BrugerViewModel()
         {
-            Username = "Herik45@Lortemail.dk";
-            Password = "Tester";
+            Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
+            Password = "Tester";// midletidigt data til at teste metode
             handler.UseDefaultCredentials = true;
-            LoginKnap = new RelayCommand(KnapSetkunde);
+            LoginKnap = new RelayCommand(KnapSetkunde);// instantiere relaycommands
         }
         public Kunde CurrentKunde
         {
@@ -34,8 +34,8 @@ namespace ZeymerZoneUWP
                 if (currentKunde == null)
                 {
                     CurrentKunde = PersistencyService<Kunde>.HentData("kundes", 1).Result;// get current kunde
-                    //retrieve the configuration file.
-                    //load the configuration and return it!
+                    //retrieve the user file.
+                    //load the user and return it!
                 }
                 return currentKunde;
 
@@ -55,7 +55,11 @@ namespace ZeymerZoneUWP
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
+        /// <summary>
+        /// En metode til at sætte den nuværende kunde og gemme den kunde som er logget ind til disken
+        /// </summary>
+        /// <param name="username">kundens username</param>
+        /// <param name="password">kundens password</param>
         public async void SetKundeAsync(string username, string password)
         {
             ICollection<Kunde> Kunder = new List<Kunde>();
@@ -68,13 +72,20 @@ namespace ZeymerZoneUWP
                 }
             }
         }
+        /// <summary>
+        /// en funktion til knappen som udfører setkunde metoden
+        /// </summary>
         public void KnapSetkunde()
         {
             SetKundeAsync(Username, Password);
         }
-        private void Hentkunde()
+        /// <summary>
+        /// Henter en specifik kunde ud fra et ID
+        /// </summary>
+        /// <param name="kundeId">kundens ID</param>
+        private void Hentkunde(int kundeId)
         {
-            CurrentKunde = PersistencyService<Kunde>.HentData("kundes",1).Result;
+            CurrentKunde = PersistencyService<Kunde>.HentData("kundes", kundeId).Result;
 
         }
     }
