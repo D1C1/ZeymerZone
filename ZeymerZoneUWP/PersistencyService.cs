@@ -104,6 +104,13 @@ namespace ZeymerZoneUWP
 
             await FileIO.WriteTextAsync(file, jsonText);
         }
-
+        public static async Task<T> HentDataDisk(string filnavn)
+        {
+            StorageFolder localfolder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await localfolder.GetFileAsync(filnavn);
+            string jsonText = await FileIO.ReadTextAsync(file);
+            T tempData = JsonConvert.DeserializeObject<T>(jsonText);
+            return tempData;
+        }
     }
 }

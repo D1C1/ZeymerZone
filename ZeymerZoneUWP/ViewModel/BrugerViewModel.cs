@@ -33,7 +33,7 @@ namespace ZeymerZoneUWP
             {
                 if (currentKunde == null)
                 {
-                    CurrentKunde = PersistencyService<Kunde>.HentData("kundes", 1).Result;// get current kunde
+                    CurrentKunde = PersistencyService<Kunde>.HentDataDisk("KundeCurrent").Result;// get current kunde
                     //retrieve the user file.
                     //load the user and return it!
                 }
