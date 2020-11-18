@@ -25,6 +25,7 @@ namespace ZeymerZoneUWP
         public BrugerViewModel BrugerVM { get; set; }
         public LoginPage()
         {
+            PersistencyService<Kunde>.Makefile("KundeCurrent");
             BrugerVM = new BrugerViewModel();
             this.InitializeComponent();
         }

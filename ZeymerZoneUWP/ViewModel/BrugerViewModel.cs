@@ -22,10 +22,11 @@ namespace ZeymerZoneUWP
 
         public BrugerViewModel()
         {
-            Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
-            Password = "Tester";// midletidigt data til at teste metode
+           // Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
+           // Password = "Tester";// midletidigt data til at teste metode
             handler.UseDefaultCredentials = true;
             LoginKnap = new RelayCommand(KnapSetkunde);// instantiere relaycommands
+            SetCurrent();
         }
         public Kunde CurrentKunde
         {
@@ -33,7 +34,7 @@ namespace ZeymerZoneUWP
             {
                 if (currentKunde == null)
                 {
-                    CurrentKunde = PersistencyService<Kunde>.HentDataDisk("KundeCurrent").Result;// get current kunde
+                    //SetCurrent();// get current kunde
                     //retrieve the user file.
                     //load the user and return it!
                 }
@@ -87,6 +88,18 @@ namespace ZeymerZoneUWP
         {
             CurrentKunde = PersistencyService<Kunde>.HentData("kundes", kundeId).Result;
 
+        }
+        private async void SetCurrent()
+        {
+            Kunde tempkunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            if(tempkunde == null)
+            {
+
+            }
+            else
+            {
+                currentKunde = tempkunde;
+            }
         }
     }
 }

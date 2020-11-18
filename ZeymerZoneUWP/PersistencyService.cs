@@ -110,5 +110,10 @@ namespace ZeymerZoneUWP
             T tempData = JsonConvert.DeserializeObject<T>(jsonText);
             return tempData;
         }
+        public static async void Makefile(string filNavn)
+        {
+            StorageFolder localfolder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await localfolder.CreateFileAsync(filNavn, CreationCollisionOption.ReplaceExisting);
+        }
     }
 }
