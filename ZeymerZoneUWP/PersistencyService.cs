@@ -12,11 +12,12 @@ namespace ZeymerZoneUWP
 {
     public class PersistencyService<T>
     {
+        //Ensure tha this is the same URL as applied under 
+        //Properties->Web->Project URL in the web service project 
+        const string serverUrl = "http://localhost:57648/";
         public static Task<T> HentData(string controllerNavn)
         {
-            //Ensure tha this is the same URL as applied under 
-            //Properties->Web->Project URL in the web service project 
-            const string serverUrl = "http://localhost:57648/";
+            
             //Setup client handler
             HttpClientHandler handler = new HttpClientHandler();
 
@@ -56,9 +57,6 @@ namespace ZeymerZoneUWP
         }
         public static Task<T> HentData(string controllerNavn, int key)
         {
-            //Ensure tha this is the same URL as applied under 
-            //Properties->Web->Project URL in the web service project 
-            const string serverUrl = "http://localhost:57648/";
             //Setup client handler
             HttpClientHandler handler = new HttpClientHandler();
 
