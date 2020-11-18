@@ -95,6 +95,7 @@ namespace ZeymerZoneUWP
             }
             
         }
+        //Mangler create update delete for CRUD
         //lokal filer
         public static async Task GemDataDisk(T data, string filnavn)
         {
