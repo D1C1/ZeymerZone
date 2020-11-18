@@ -14,6 +14,7 @@ namespace ZeymerZoneUWP
     {
         //Ensure tha this is the same URL as applied under 
         //Properties->Web->Project URL in the web service project 
+        //databasefiler
         const string serverUrl = "http://localhost:57648/";
         public static Task<T> HentData(string controllerNavn)
         {
@@ -94,6 +95,7 @@ namespace ZeymerZoneUWP
             }
             
         }
+        //lokal filer
         public static async Task GemDataDisk(T data, string filnavn)
         {
             string jsonText = JsonConvert.SerializeObject(data);
