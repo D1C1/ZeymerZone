@@ -14,17 +14,11 @@ namespace ZeymerZoneUWP
     public class BrugerViewModel : INotifyPropertyChanged
     {
         private Kunde currentKunde;
-        //Ensure tha this is the same URL as applied under 
-        //Properties->Web->Project URL in the web service project 
-        const string serverUrl = "http://localhost:57648/";
-        //Setup client handler
-        HttpClientHandler handler = new HttpClientHandler();
 
         public BrugerViewModel()
         {
            // Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
-           // Password = "Tester";// midletidigt data til at teste metode
-            handler.UseDefaultCredentials = true;
+           // Password = "Tester";// midletidigt data til at teste metode           
             LoginKnap = new RelayCommand(KnapSetkunde);// instantiere relaycommands
             SetCurrent();
         }
