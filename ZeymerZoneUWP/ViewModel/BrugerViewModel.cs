@@ -22,6 +22,7 @@ namespace ZeymerZoneUWP
            // Password = "Tester";// midletidigt data til at teste metode           
             LoginKnap = new RelayCommand(KnapSetkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
+            SletKnap = new RelayCommand(SletKundeKnap);
             SetCurrent();
         }
         
@@ -46,6 +47,7 @@ namespace ZeymerZoneUWP
         }
         public RelayCommand LoginKnap { get; set; }
         public RelayCommand OpretKnap { get; set; }
+        public RelayCommand SletKnap { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string RepeatPassword { get; set; }
@@ -117,5 +119,10 @@ namespace ZeymerZoneUWP
                 currentKunde = tempkunde;
             }
         }
+        public void SletKundeKnap()
+        {
+            PersistencyService<Kunde>.FjernData("kundes",CurrentKunde.Kunde_Id);
+        }
+
     }
 }

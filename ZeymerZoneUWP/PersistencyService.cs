@@ -154,7 +154,7 @@ namespace ZeymerZoneUWP
             }
 
         }
-        public static void FjernData(int key)
+        public static void FjernData(string controllerNavn,int key)
         {
             //Setup client handler
             HttpClientHandler handler = new HttpClientHandler();
@@ -171,7 +171,7 @@ namespace ZeymerZoneUWP
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
-                    var deleteResponse = client.DeleteAsync($"api/Vejleders/{key}").Result;
+                    var deleteResponse = client.DeleteAsync($"api/{controllerNavn}/{key}").Result;
 
                     //Check response -> throw exception if NOT successful
                     deleteResponse.EnsureSuccessStatusCode();
