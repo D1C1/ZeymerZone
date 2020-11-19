@@ -39,11 +39,11 @@ namespace ZeymerZoneWebService
         public int Kunde_postnr { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime Kunde_fødeselsdag { get; set; }
+        public DateTime Kunde_foedeselsdag { get; set; }
 
-        public int Kunde_vægt { get; set; }
+        public int Kunde_vaegt { get; set; }
 
-        public int Kunde_højde { get; set; }
+        public int Kunde_hoejde { get; set; }
 
         [Required]
         [StringLength(50)]

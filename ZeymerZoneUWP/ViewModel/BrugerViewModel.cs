@@ -14,26 +14,29 @@ namespace ZeymerZoneUWP
     public class BrugerViewModel : INotifyPropertyChanged
     {
         private Kunde currentKunde;
+        private string _status;
 
         public BrugerViewModel()
         {
            // Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
            // Password = "Tester";// midletidigt data til at teste metode           
             LoginKnap = new RelayCommand(KnapSetkunde);// instantiere relaycommands
+            OpretKnap = new RelayCommand(Gemkunde);
             SetCurrent();
         }
+        
+
+        public string Status
+        {
+            get { return _status; }
+            set { _status = value; NotifyPropertyChanged(); }
+        }
+
         public Kunde CurrentKunde
         {
             get 
             {
-                if (currentKunde == null)
-                {
-                    //SetCurrent();// get current kunde
-                    //retrieve the user file.
-                    //load the user and return it!
-                }
                 return currentKunde;
-
             }
             set
             {
@@ -42,8 +45,11 @@ namespace ZeymerZoneUWP
             }
         }
         public RelayCommand LoginKnap { get; set; }
+        public RelayCommand OpretKnap { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string RepeatPassword { get; set; }
+        public DateTimeOffset FoedselsdagOffset { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
@@ -82,6 +88,22 @@ namespace ZeymerZoneUWP
         {
             CurrentKunde = PersistencyService<Kunde>.HentData("kundes", kundeId).Result;
 
+        }
+        /// <summary>
+        /// Gemmer currentkunde
+        /// </summary>
+        private void Gemkunde()
+        {
+            CurrentKunde.Kunde_foedeselsdag = FoedselsdagOffset.DateTime;
+            if (CurrentKunde.Password != RepeatPassword)
+            {
+                Status = "Password matcher ikke hinanden";
+            }
+            else
+            {
+                PersistencyService<Kunde>.GemData("kundes", CurrentKunde);
+            }
+            
         }
         private async void SetCurrent()
         {
