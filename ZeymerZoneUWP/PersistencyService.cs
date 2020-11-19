@@ -16,9 +16,38 @@ namespace ZeymerZoneUWP
         //Properties->Web->Project URL in the web service project 
         //databasefiler
         const string serverUrl = "http://localhost:57648/";
+        public static void GemData(string controllerNavn, T nyData)
+        {
+            HttpClientHandler handler = new HttpClientHandler();
+
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                //Initialize client
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+
+                //Request JSON format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    var postResponse = client.PostAsJsonAsync<T>($"api/{controllerNavn}", nyData).Result;
+
+                    //Check response -> throw exception if NOT successful
+                    postResponse.EnsureSuccessStatusCode();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+        }
         public static Task<T> HentData(string controllerNavn)
         {
-            
+
             //Setup client handler
             HttpClientHandler handler = new HttpClientHandler();
 
@@ -85,7 +114,7 @@ namespace ZeymerZoneUWP
                     //Get the data as a IEnumerable
                     return getVejledersResponse.Content.ReadAsAsync<T>();
 
-                    
+
                 }
                 catch (Exception e)
                 {
@@ -93,9 +122,68 @@ namespace ZeymerZoneUWP
                     return null;
                 }
             }
-            
+
         }
-        //Mangler create update delete for CRUD
+        public static void UpdateData(T dataToBeUpdated, int key)
+        {
+            //Setup client handler
+            HttpClientHandler handler = new HttpClientHandler();
+
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                //Initialize client
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+
+                //Request JSON format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    var putResponse = client.PutAsJsonAsync<T>($"api/Vejleders/{key}", dataToBeUpdated).Result;
+
+                    //Check response -> throw exception if NOT successful
+                    putResponse.EnsureSuccessStatusCode();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
+        }
+        public static void FjernData(int key)
+        {
+            //Setup client handler
+            HttpClientHandler handler = new HttpClientHandler();
+
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                //Initialize client
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+
+                //Request JSON format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    var deleteResponse = client.DeleteAsync($"api/Vejleders/{key}").Result;
+
+                    //Check response -> throw exception if NOT successful
+                    deleteResponse.EnsureSuccessStatusCode();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+        }
+
         //lokal filer
         public static async Task GemDataDisk(T data, string filnavn)
         {
