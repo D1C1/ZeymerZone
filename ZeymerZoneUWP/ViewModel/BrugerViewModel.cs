@@ -18,7 +18,7 @@ namespace ZeymerZoneUWP
 
         public BrugerViewModel()
         {
-            _ = SetCurrent();
+            SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
             SletKnap = new RelayCommand(SletKunde);
@@ -123,7 +123,7 @@ namespace ZeymerZoneUWP
         /// <summary>
         /// Bliver brugt til at sikre at current kunde altid er den gemte kunde på disken
         /// </summary>
-        private async Task SetCurrent()
+        private async void SetCurrent()
         {
             currentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
            // if(tempkunde == null)
