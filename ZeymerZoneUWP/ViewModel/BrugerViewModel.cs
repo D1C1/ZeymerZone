@@ -18,13 +18,12 @@ namespace ZeymerZoneUWP
 
         public BrugerViewModel()
         {
-           // Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
-           // Password = "Tester";// midletidigt data til at teste metode           
+            _ = SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
             SletKnap = new RelayCommand(SletKunde);
-            OpdaterKnap = new RelayCommand(OpdaterKunde);
-            SetCurrent();
+            OpdaterKnap = new RelayCommand(OpdaterKundeAsync);
+            
         }
         
 
@@ -58,6 +57,7 @@ namespace ZeymerZoneUWP
         {
             get
             {
+                if (CurrentKunde.Kunde_foedeselsdag.Date.ToString("dd MMMM yyyy") == null) return "error";
                 return CurrentKunde.Kunde_foedeselsdag.Date.ToString("dd MMMM yyyy");
             }
             set
@@ -123,22 +123,22 @@ namespace ZeymerZoneUWP
         /// <summary>
         /// Bliver brugt til at sikre at current kunde altid er den gemte kunde på disken
         /// </summary>
-        private async void SetCurrent()
+        private async Task SetCurrent()
         {
-            Kunde tempkunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
-            if(tempkunde == null)
-            {
+            currentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+           // if(tempkunde == null)
+           // {
 
-            }
-            else
-            {
-                currentKunde = tempkunde;
-            }
+           // }
+            //else
+            //{
+                
+            //}
         }
-        public void OpdaterKunde()
+        public async void OpdaterKundeAsync()
         {
             PersistencyService<Kunde>.UpdateData("kundes",CurrentKunde,CurrentKunde.Kunde_Id);
-            SetCurrent();
+            await PersistencyService<Kunde>.GemDataDisk(CurrentKunde, "KundeCurrent");
         }
         public void SletKunde()
         {
