@@ -59,7 +59,7 @@ namespace ZeymerZoneUWP
             get
             {
                 if (CurrentKunde.Kunde_foedeselsdag.Date.ToString("dd MMMM yyyy") == null) return "error";
-                return CurrentKunde.Kunde_foedeselsdag.Date.ToString("dd MMMM yyyy");
+                return $"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
             }
             set
             {
