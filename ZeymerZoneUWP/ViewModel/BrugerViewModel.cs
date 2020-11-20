@@ -82,6 +82,7 @@ namespace ZeymerZoneUWP
                 if (item.Kunde_email == username && item.Password == password)
                 {
                     await PersistencyService<Kunde>.GemDataDisk(item, "KundeCurrent");
+                    return;
                 }
             }
         }
@@ -134,6 +135,36 @@ namespace ZeymerZoneUWP
         }
         public void SletKundeKnap()
         {
+            // load alle kostplaner
+            ICollection<Kostplan> kostplaner = PersistencyService<ICollection<Kostplan>>.HentData("Kostplans").Result;
+            foreach (var item in kostplaner)
+            {
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
+                {
+                    PersistencyService<Kunde>.FjernData("Kostplans", item.Kostplan_Id);
+                }
+            }
+            // slet nødvendige
+            // load alle logs
+            ICollection<Log> logs = PersistencyService<ICollection<Log>>.HentData("logs").Result;
+            foreach (var item in logs)
+            {
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
+                {
+                    PersistencyService<Log>.FjernData("logs", item.Logs_Id);
+                }
+            }
+            // slet nødvendige 
+            // load alle konsultationer
+            ICollection<Konsultation> konsultationer = PersistencyService<ICollection<Konsultation>>.HentData("konsultations").Result;
+            foreach (var item in konsultationer)
+            {
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
+                {
+                    PersistencyService<Konsultation>.FjernData("konsultations", item.Konsultation_Id);
+                }
+            }
+            // slet nødvendige 
             PersistencyService<Kunde>.FjernData("kundes",CurrentKunde.Kunde_Id);
         }
 
