@@ -25,7 +25,7 @@
                 <TextBox PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBlock Text="Fødselsdag" TextWrapping="Wrap"/>
-                <TextBlock Text="{x:Bind BrugerVM.CurrentKunde.Kunde_foedeselsdag, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat, Mode=TwoWay}" TextWrapping="Wrap"/>
             </StackPanel>
             <Button Content="Opdater bruger" Margin="58,458,0,0" VerticalAlignment="Top"/>
             <Button Content="Slet bruger" Command="{x:Bind Path=BrugerVM.SletKnap, Mode=OneWay}" Margin="275,458,0,0" VerticalAlignment="Top" Click="Button_Click_4"/>

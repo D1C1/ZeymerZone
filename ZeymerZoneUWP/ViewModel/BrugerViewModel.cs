@@ -52,6 +52,16 @@ namespace ZeymerZoneUWP
         public string Password { get; set; }
         public string RepeatPassword { get; set; }
         public DateTimeOffset FoedselsdagOffset { get; set; }
+        public string FoedselsdagFormat
+        {
+            get
+            {
+                return CurrentKunde.Kunde_foedeselsdag.Date.ToString("dd MMMM yyyy");
+            }
+            set
+            {
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
@@ -107,6 +117,9 @@ namespace ZeymerZoneUWP
             }
             
         }
+        /// <summary>
+        /// Bliver brugt til at sikre at current kunde altid er den gemte kunde på disken
+        /// </summary>
         private async void SetCurrent()
         {
             Kunde tempkunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
