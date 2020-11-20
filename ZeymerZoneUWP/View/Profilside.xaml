@@ -27,7 +27,7 @@
                 <TextBlock Text="Fødselsdag" TextWrapping="Wrap"/>
                 <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat, Mode=TwoWay}" TextWrapping="Wrap"/>
             </StackPanel>
-            <Button Content="Opdater bruger" Margin="58,458,0,0" VerticalAlignment="Top"/>
+            <Button Content="Opdater bruger" Command="{x:Bind Path=BrugerVM.OpdaterKnap, Mode=OneWay}" Margin="58,458,0,0" VerticalAlignment="Top"/>
             <Button Content="Slet bruger" Command="{x:Bind Path=BrugerVM.SletKnap, Mode=OneWay}" Margin="275,458,0,0" VerticalAlignment="Top" Click="Button_Click_4"/>
         </Grid>
     </Grid>

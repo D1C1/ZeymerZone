@@ -20,9 +20,10 @@ namespace ZeymerZoneUWP
         {
            // Username = "Herik45@Lortemail.dk"; // midletidigt data til at teste metode
            // Password = "Tester";// midletidigt data til at teste metode           
-            LoginKnap = new RelayCommand(KnapSetkunde);// instantiere relaycommands
+            LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
-            SletKnap = new RelayCommand(SletKundeKnap);
+            SletKnap = new RelayCommand(SletKunde);
+            OpdaterKnap = new RelayCommand(OpdaterKunde);
             SetCurrent();
         }
         
@@ -48,6 +49,7 @@ namespace ZeymerZoneUWP
         public RelayCommand LoginKnap { get; set; }
         public RelayCommand OpretKnap { get; set; }
         public RelayCommand SletKnap { get; set; }
+        public RelayCommand OpdaterKnap { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string RepeatPassword { get; set; }
@@ -89,7 +91,7 @@ namespace ZeymerZoneUWP
         /// <summary>
         /// en funktion til knappen som udfører setkunde metoden
         /// </summary>
-        public void KnapSetkunde()
+        public void Setkunde()
         {
             SetKundeAsync(Username, Password);
         }
@@ -133,7 +135,12 @@ namespace ZeymerZoneUWP
                 currentKunde = tempkunde;
             }
         }
-        public void SletKundeKnap()
+        public void OpdaterKunde()
+        {
+            PersistencyService<Kunde>.UpdateData("kundes",CurrentKunde,CurrentKunde.Kunde_Id);
+            SetCurrent();
+        }
+        public void SletKunde()
         {
             // load alle kostplaner
             ICollection<Kostplan> kostplaner = PersistencyService<ICollection<Kostplan>>.HentData("Kostplans").Result;

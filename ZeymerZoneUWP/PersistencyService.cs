@@ -124,7 +124,7 @@ namespace ZeymerZoneUWP
             }
 
         }
-        public static void UpdateData(T dataToBeUpdated, int key)
+        public static void UpdateData(string controllerNavn,T dataToBeUpdated, int key)
         {
             //Setup client handler
             HttpClientHandler handler = new HttpClientHandler();
@@ -141,7 +141,7 @@ namespace ZeymerZoneUWP
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
-                    var putResponse = client.PutAsJsonAsync<T>($"api/Vejleders/{key}", dataToBeUpdated).Result;
+                    var putResponse = client.PutAsJsonAsync<T>($"api/{controllerNavn}/{key}", dataToBeUpdated).Result;
 
                     //Check response -> throw exception if NOT successful
                     putResponse.EnsureSuccessStatusCode();
