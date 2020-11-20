@@ -17,7 +17,7 @@
         </Grid>
         <Grid Margin="0,0,0,78">
             <StackPanel Margin="0,140,0,235">
-                <TextBox PlaceholderText="Navn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox PlaceholderText="Navn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
                 <TextBox PlaceholderText="Telefon" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
                 <TextBox PlaceholderText="Email" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
                 <TextBox PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>

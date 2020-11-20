@@ -13,11 +13,13 @@ namespace ZeymerZoneUWP
 {
     public class BrugerViewModel : INotifyPropertyChanged
     {
-        private Kunde currentKunde;
+        private Kunde _currentKunde;
         private string _status;
 
         public BrugerViewModel()
         {
+            _currentKunde = new Kunde();
+            _currentKunde.Kunde_navn = "error try again";
             SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
@@ -32,16 +34,15 @@ namespace ZeymerZoneUWP
             get { return _status; }
             set { _status = value; NotifyPropertyChanged(); }
         }
-
         public Kunde CurrentKunde
         {
             get 
             {
-                return currentKunde;
+                return _currentKunde;
             }
             set
             {
-                currentKunde = value;
+                _currentKunde = value;
                 NotifyPropertyChanged();
             }
         }
@@ -120,12 +121,13 @@ namespace ZeymerZoneUWP
             }
             
         }
+
         /// <summary>
         /// Bliver brugt til at sikre at current kunde altid er den gemte kunde på disken
         /// </summary>
         private async void SetCurrent()
         {
-            currentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
            // if(tempkunde == null)
            // {
 
