@@ -101,6 +101,7 @@ namespace ZeymerZoneUWP
         /// </summary>
         private void Gemkunde()
         {
+            CurrentKunde = new Kunde();
             CurrentKunde.Kunde_foedeselsdag = FoedselsdagOffset.DateTime;
             if (CurrentKunde.Password != RepeatPassword)
             {
