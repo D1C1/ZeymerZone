@@ -18,8 +18,8 @@ namespace ZeymerZoneUWP
 
         public BrugerViewModel()
         {
-            _currentKunde = new Kunde();
-            _currentKunde.Kunde_navn = "error try again";
+            CurrentKunde = new Kunde();
+            CurrentKunde.Kunde_navn = "error try again";
             SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
@@ -95,15 +95,6 @@ namespace ZeymerZoneUWP
         public void Setkunde()
         {
             SetKundeAsync(Username, Password);
-        }
-        /// <summary>
-        /// Henter en specifik kunde ud fra et ID
-        /// </summary>
-        /// <param name="kundeId">kundens ID</param>
-        private void Hentkunde(int kundeId)
-        {
-            CurrentKunde = PersistencyService<Kunde>.HentData("kundes", kundeId).Result;
-
         }
         /// <summary>
         /// Gemmer currentkunde
