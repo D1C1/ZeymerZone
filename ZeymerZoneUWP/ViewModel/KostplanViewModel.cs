@@ -59,7 +59,7 @@ namespace ZeymerZoneUWP
             set 
             { 
                 selectedKostplan = value;
-                NotifyPropertyChanged();
+                
             } 
         }
 
