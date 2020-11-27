@@ -27,7 +27,7 @@
                 <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <DatePicker Date="{x:Bind BrugerVM.FoedselsdagOffset, Mode=TwoWay}" Header="Fødselsdag" Width="430"/>
                 <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}"/>
-                <TextBox IsReadOnly="True" Text="TextBox" TextWrapping="Wrap"/>
+                <TextBox IsReadOnly="True" Text="{x:Bind BrugerVM.Status, Mode=TwoWay}" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
     </Grid>
