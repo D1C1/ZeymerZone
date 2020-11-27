@@ -9,6 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <StackPanel Margin="0,0,0,235">
+            <ListView SelectedItem="{x:Bind KostplanVM.SelectedKostplan, Mode=TwoWay}" x:Name="KostplanList" ItemsSource="{x:Bind KostplanVM.OC_Kostplaner}" Height="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Kostplan">
+                        <StackPanel>
+                        <TextBox IsReadOnly="True" Text="{x:Bind Ugedag, Mode=OneTime}"/>
+                        <TextBox IsReadOnly="True" Text="{x:Bind Opskriftnavn, Mode=OneTime}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
             <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_3"/>
             <Button Content="Profil" Margin="125,0,0,0" Click="Button_Click"/>

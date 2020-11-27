@@ -120,14 +120,6 @@ namespace ZeymerZoneUWP
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
-           // if(tempkunde == null)
-           // {
-
-           // }
-            //else
-            //{
-                
-            //}
         }
         public async void OpdaterKundeAsync()
         {
