@@ -19,7 +19,6 @@ namespace ZeymerZoneUWP
         public BrugerViewModel()
         {
             CurrentKunde = new Kunde();
-            CurrentKunde.Kunde_navn = "error try again";
             SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
