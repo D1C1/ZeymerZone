@@ -12,14 +12,14 @@ namespace ZeymerZoneUWP
     public class KostplanViewModel : INotifyPropertyChanged
     {
 
-        private Kunde _currentKunde;
+        public static Kunde _currentKunde;
+        private Kostplan selectedKostplan;
 
         public KostplanViewModel()
         {
+            CurrentKunde = new Kunde();
             SetCurrent();
-            SetKostplan();
         }
-
 
         #region Henter kunde
         public Kunde CurrentKunde
@@ -45,20 +45,31 @@ namespace ZeymerZoneUWP
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            SetKostplan();
         }
 
         #endregion
 
         public ObservableCollection<Kostplan> OC_Kostplaner { get; set; } = new ObservableCollection<Kostplan>();
-        public Kostplan SelectedKostplan { get; set; }
+        public Kostplan SelectedKostplan { 
+            get 
+            { 
+                 return selectedKostplan;
+            } 
+            set 
+            { 
+                selectedKostplan = value;
+                NotifyPropertyChanged();
+            } 
+        }
 
         /// <summary>
         /// En metode til at sætte den nuværende kundes kostplaner.
         /// </summary>
-        public void SetKostplan()
+        public async void SetKostplan()
         {
             ICollection<Kostplan> Kostplaner = new List<Kostplan>();
-            Kostplaner = PersistencyService<ICollection<Kostplan>>.HentData("kostplans").Result;
+            Kostplaner = await PersistencyService<ICollection<Kostplan>>.HentData("kostplans");
             foreach (var item in Kostplaner)
             {
                 if (item.Kunde_Id == CurrentKunde.Kunde_Id)

@@ -13,7 +13,7 @@ namespace ZeymerZoneUWP
 {
     public class BrugerViewModel : INotifyPropertyChanged
     {
-        private Kunde _currentKunde;
+        public static Kunde _currentKunde;
         private string _status;
 
         public BrugerViewModel()
