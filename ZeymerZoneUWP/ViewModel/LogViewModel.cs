@@ -12,26 +12,72 @@ namespace ZeymerZoneUWP
     public class LogViewModel : INotifyPropertyChanged
     {
         private Kunde _currentKunde;
+        private Log newLog;
+        
 
         public LogViewModel()
         {
             SetCurrent();
             NewLog = new Log();
-            ShowLogs = new RelayCommand(GetLogs);
+            ShowLogsKnap = new RelayCommand(GetLogs);
+            GemLogKnap = new RelayCommand(GemLog);
+            ShowAllLogsKnap = new RelayCommand(GetAllLogs);
+            
         }
 
-        public RelayCommand ShowLogs { get; set; }
+        public RelayCommand ShowLogsKnap { get; set; }
+        public RelayCommand ShowAllLogsKnap { get; set; }
+        public RelayCommand GemLogKnap { get; set; }
 
-        public Log NewLog { get; set; }
+        public Log NewLog {
+            get { return newLog; }
+            set { newLog = value; } 
+        }
 
-        public ObservableCollection<Log> KundeLogs { get; set; } = new ObservableCollection<Log>();
+        private void GemLog()
+        {
+            NewLog.Kunde_Id = CurrentKunde.Kunde_Id;
+            NewLog.Vejleder_Id = 1;
+            NewLog.Log_date = DateTime.Now;
+            PersistencyService<Log>.GemData("logs", NewLog);
+        }
+
+        public DateTimeOffset CompareDate { get; set; }
+
+        public ObservableCollection<Log> OC_KundeLogs { get; set; } = new ObservableCollection<Log>();
+        public ICollection<Log> KundeLogs { get; set; }
+
+        private void GetAllLogs()
+        {
+            KundeLogs = PersistencyService<ICollection<Log>>.HentData("logs").Result;
+            OC_KundeLogs.Clear();
+            foreach (var item in KundeLogs)
+            {               
+                    OC_KundeLogs.Add(item);
+                
+            }
+        }
 
         private void GetLogs()
         {
-            KundeLogs = PersistencyService<ObservableCollection<Log>>.HentData("logs").Result;
-
-
+            KundeLogs = PersistencyService<ICollection<Log>>.HentData("logs").Result;
+            OC_KundeLogs.Clear();
+            foreach (var item in KundeLogs)
+            {
+                if (CompareDate != null)
+                {
+                    if (item.Log_date == CompareDate.Date)
+                    {
+                        OC_KundeLogs.Add(item);
+                    }
+                }
+                else
+                {
+                    OC_KundeLogs.Add(item);
+                }
+            }
         }
+
 
 
         #region Henter kunde

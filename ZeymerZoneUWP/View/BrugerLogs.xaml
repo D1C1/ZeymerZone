@@ -10,26 +10,30 @@
 
     <Grid>
         <StackPanel Margin="0,0,0,235">
-            <ListView SelectedItem="{x:Bind LogVM.NewLog, Mode=TwoWay}" x:Name="KundeLogs" ItemsSource="{x:Bind LogVM.KundeLogs}" Height="203">
+            <ListView SelectedItem="{x:Bind LogVM.NewLog, Mode=TwoWay}" x:Name="KundeLogs" ItemsSource="{x:Bind LogVM.OC_KundeLogs}" Height="203">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Log">
                         <StackPanel Orientation="Horizontal">
-                            <TextBox IsReadOnly="True" Text="{x:Bind Log_date, Mode=OneWay}"/>
-                            <TextBox IsReadOnly="True" Text="{x:Bind Overskrift, Mode=OneWay}"/>
+                            <TextBox IsReadOnly="True" Text="{x:Bind Log_date, Mode=OneTime}"/>
+                            <TextBox IsReadOnly="True" Text="{x:Bind Overskrift, Mode=OneTime}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
         <StackPanel DataContext="{Binding SelectedItem, ElementName=KundeLogs}">
-            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Log}" Margin="226,384,0,223"></TextBox>
+            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Log1}" Margin="226,384,0,223"></TextBox>
         </StackPanel>
-        <Button Content="Get logs" Command="{x:Bind LogVM.ShowLogs, Mode=OneWay}" Height="121" Width="216" ></Button>
+        <Button Content="Get logs from date" Command="{x:Bind LogVM.ShowLogsKnap, Mode=OneWay}" Height="32" Width="169" Margin="0,555,0,0" VerticalAlignment="Top" ></Button>
+        <Button Content="Opret log" Margin="0,436,0,0" VerticalAlignment="Top" Height="31" Width="169" Click="Button_Click_4"></Button>
+        <DatePicker Header="Sort date" x:Name="selectDate" Date="{x:Bind LogVM.CompareDate, Mode=TwoWay}" Margin="0,495,0,0" VerticalAlignment="Top"/>
+        <Button Content="Vis alle logs" Command="{x:Bind LogVM.ShowAllLogsKnap}" Margin="0,384,0,0" VerticalAlignment="Top" Height="34" Width="177"></Button>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
             <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_3"/>
             <Button Content="Profil" Margin="125,0,0,0" Click="Button_Click"/>
             <Button Content="Kostplan" Margin="225,0,0,0" Click="Button_Click_1"/>
             <Button Content="Log" Margin="325,0,0,0" Click="Button_Click_2"/>
         </Grid>
+
     </Grid>
 </Page>

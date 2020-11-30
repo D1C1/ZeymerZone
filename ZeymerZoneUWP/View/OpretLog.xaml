@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <TextBox PlaceholderText="Overskrift" Text="{x:Bind Path=LogVM.NewLog.Overskrift, Mode=TwoWay}" Margin="0,0,44,713"></TextBox>
+        <TextBox PlaceholderText="Skriv din log her" Text="{x:Bind Path=LogVM.NewLog.Log1, Mode=TwoWay}" Margin="0,85,44,530"></TextBox>
+        <Button Content="Gem log" Command="{x:Bind LogVM.GemLogKnap, Mode=OneWay}"></Button>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
             <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_3"/>
             <Button Content="Profil" Margin="125,0,0,0" Click="Button_Click"/>

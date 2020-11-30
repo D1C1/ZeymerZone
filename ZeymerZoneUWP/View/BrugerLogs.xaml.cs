@@ -27,6 +27,8 @@ namespace ZeymerZoneUWP
         {
             LogVM = new LogViewModel();
             this.InitializeComponent();
+            DatePicker selectDate = new DatePicker();
+            selectDate.SelectedDate = null;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +48,11 @@ namespace ZeymerZoneUWP
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPageLoggetInd));
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OpretLog));
         }
     }
 }
