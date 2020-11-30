@@ -13,7 +13,7 @@ namespace ZeymerZoneUWP
     {
 
         public static Kunde _currentKunde;
-        private Kostplan selectedKostplan;
+        private Kostplan _selectedKostplan;
 
         public KostplanViewModel()
         {
@@ -70,11 +70,11 @@ namespace ZeymerZoneUWP
         public Kostplan SelectedKostplan { 
             get 
             { 
-                 return selectedKostplan;
+                 return _selectedKostplan;
             } 
             set 
             { 
-                selectedKostplan = value;
+                _selectedKostplan = value;
                 
             } 
         }
