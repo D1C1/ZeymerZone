@@ -22,8 +22,16 @@
             </ListView>
         </StackPanel>
         <StackPanel DataContext="{Binding SelectedItem, ElementName=KostplanList}">
-        <TextBox PlaceholderText="Link til opskrift" Text="{Binding Link}" Margin="226,384,0,223"></TextBox>
+            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Link}" Margin="226,384,0,223"></TextBox>
         </StackPanel>
+        <Button Content="Man" Margin="10,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Monday, Mode=OneWay}"/>
+        <Button Content="Tir" Margin="70,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Tuesday, Mode=OneWay}"/>
+        <Button Content="Ons" Margin="130,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Wednesday, Mode=OneWay}"/>
+        <Button Content="Tor" Margin="190,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Thursday, Mode=OneWay}"/>
+        <Button Content="Fre" Margin="250,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Friday, Mode=OneWay}"/>
+        <Button Content="Lør" Margin="310,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Saturday, Mode=OneWay}"/>
+        <Button Content="Søn" Margin="370,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Sunday, Mode=OneWay}"/>
+
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
             <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_3"/>
             <Button Content="Profil" Margin="125,0,0,0" Click="Button_Click"/>

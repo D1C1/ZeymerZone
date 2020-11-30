@@ -19,7 +19,23 @@ namespace ZeymerZoneUWP
         {
             CurrentKunde = new Kunde();
             SetCurrent();
+            Monday = new RelayCommand(SetKostplanMonday);
+            Tuesday = new RelayCommand(SetKostplanTuesday);
+            Wednesday = new RelayCommand(SetKostplanWednesday);
+            Thursday = new RelayCommand(SetKostplanThursday);
+            Friday = new RelayCommand(SetKostplanFriday);
+            Saturday = new RelayCommand(SetKostplanSaturday);
+            Sunday = new RelayCommand(SetKostplanSunday);
         }
+
+        public RelayCommand Monday { get; set; }
+        public RelayCommand Tuesday { get; set; }
+        public RelayCommand Wednesday { get; set; }
+        public RelayCommand Thursday { get; set; }
+        public RelayCommand Friday { get; set; }
+        public RelayCommand Saturday { get; set; }
+        public RelayCommand Sunday { get; set; }
+
 
         #region Henter kunde
         public Kunde CurrentKunde
@@ -68,16 +84,98 @@ namespace ZeymerZoneUWP
         /// </summary>
         public async void SetKostplan()
         {
-            ICollection<Kostplan> Kostplaner = new List<Kostplan>();
+            
             Kostplaner = await PersistencyService<ICollection<Kostplan>>.HentData("kostplans");
+            
+        }
+
+        public ICollection<Kostplan>  Kostplaner { get; set; }
+
+        #region SetKostplanDays
+        public void SetKostplanMonday()
+        {
+            OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
+                if (item.Ugedag == "Mandag")
                 {
                     OC_Kostplaner.Add(item);
                 }
             }
         }
 
+        public void SetKostplanTuesday()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if (item.Ugedag == "Tirsdag")
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
+
+        public void SetKostplanWednesday()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if (item.Ugedag == "Onsdag")
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
+
+        public void SetKostplanThursday()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if (item.Ugedag == "Torsdag")
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
+
+        public void SetKostplanFriday()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if (item.Ugedag == "Fredag")
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
+
+        public void SetKostplanSaturday()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if (item.Ugedag == "Lørdag")
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
+
+        public void SetKostplanSunday()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if (item.Ugedag == "Søndag")
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
+
+#endregion
     }
 }

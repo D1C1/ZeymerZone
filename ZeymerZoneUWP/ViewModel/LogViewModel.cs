@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -15,7 +16,23 @@ namespace ZeymerZoneUWP
         public LogViewModel()
         {
             SetCurrent();
+            NewLog = new Log();
+            ShowLogs = new RelayCommand(GetLogs);
         }
+
+        public RelayCommand ShowLogs { get; set; }
+
+        public Log NewLog { get; set; }
+
+        public ObservableCollection<Log> KundeLogs { get; set; } = new ObservableCollection<Log>();
+
+        private void GetLogs()
+        {
+            KundeLogs = PersistencyService<ObservableCollection<Log>>.HentData("logs").Result;
+
+
+        }
+
 
         #region Henter kunde
         public Kunde CurrentKunde
