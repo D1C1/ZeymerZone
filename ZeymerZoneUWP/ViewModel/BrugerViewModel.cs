@@ -106,6 +106,10 @@ namespace ZeymerZoneUWP
             {
                 Status = "Password matcher ikke hinanden";
             }
+            else if (CurrentKunde.Password == null)
+            {
+                Status = "Password must be different to null";
+            }
             else
             {
                 PersistencyService<Kunde>.GemData("kundes", CurrentKunde);
