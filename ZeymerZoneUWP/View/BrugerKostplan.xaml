@@ -33,10 +33,11 @@
         <Button Content="Søn" Margin="370,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Sunday, Mode=OneWay}"/>
 
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
-            <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_3"/>
-            <Button Content="Profil" Margin="125,0,0,0" Click="Button_Click"/>
-            <Button Content="Kostplan" Margin="225,0,0,0" Click="Button_Click_1"/>
-            <Button Content="Log" Margin="325,0,0,0" Click="Button_Click_2"/>
+            <Button Content="Home" Margin="10,0,0,0" Click="Button_Click_3"/>
+            <Button Content="Profil" Margin="82,0,0,0" Click="Button_Click"/>
+            <Button Content="Kostplan" Click="Button_Click_1" Margin="155,0,0,0"/>
+            <Button Content="Log" Margin="245,0,0,0" Click="Button_Click_2"/>
+            <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" />
         </Grid>
     </Grid>
 </Page>
