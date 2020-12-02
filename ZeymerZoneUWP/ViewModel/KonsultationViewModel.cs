@@ -16,12 +16,12 @@ namespace ZeymerZoneUWP
         public KonsultationViewModel()
         {
             SetCurrent();
-            GetData();
+            
         }
         public ICollection<Konsultation> Konsultationer { get; set; }
         public ICollection<Vejleder> Vejledere { get; set; }
-        public ObservableCollection<Konsultation> OC_Konsultationer { get; set; }
-        public ObservableCollection<Vejleder> OC_Vejledere { get; set; }
+        public ObservableCollection<Konsultation> OC_Konsultationer { get; set; } = new ObservableCollection<Konsultation>();
+        public ObservableCollection<Vejleder> OC_Vejledere { get; set; } = new ObservableCollection<Vejleder>();
 
         private void GetData()
         {
@@ -31,6 +31,13 @@ namespace ZeymerZoneUWP
             {
                 if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
+                    foreach (var item2 in Vejledere)
+                    {
+                        if (item.Vejleder_Id == item2.Vejleder_Id)
+                        {
+                            item.Vejleder = item2;
+                        }
+                    }
                     OC_Konsultationer.Add(item);
                 }
             }
@@ -63,6 +70,7 @@ namespace ZeymerZoneUWP
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            GetData();
         }
 
         #endregion
