@@ -28,5 +28,29 @@ namespace ZeymerZoneUWP
             KonsultationVM = new KonsultationViewModel();
             this.InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Profilside));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BrugerKostplan));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BrugerLogs));
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPageLoggetInd));
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BrugerKonsultationer));
+        }
     }
 }

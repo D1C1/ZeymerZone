@@ -46,5 +46,9 @@ namespace ZeymerZoneUWP
         {
             this.Frame.Navigate(typeof(MainPageLoggetInd));
         }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(BrugerKonsultationer));
+        }
     }
 }
