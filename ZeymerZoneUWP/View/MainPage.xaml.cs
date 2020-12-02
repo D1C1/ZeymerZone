@@ -25,7 +25,7 @@ namespace ZeymerZoneUWP
         
         public MainPage()
         {
-            
+            PersistencyService<Kunde>.Makefile("KundeCurrent");
             this.InitializeComponent();
         }
 
