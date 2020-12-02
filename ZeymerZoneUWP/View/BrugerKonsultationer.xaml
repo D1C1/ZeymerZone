@@ -16,12 +16,23 @@
             <Button Content="Log" Margin="245,0,0,0" Click="Button_Click_2"/>
             <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" />
         </Grid>
-        <ListView x:Name="KundeLogs" ItemsSource="{x:Bind KonsultationVM.OC_Konsultationer}" Height="203">
+        <ListView Header="Dine konsultationer" x:Name="KundeLogs" ItemsSource="{x:Bind KonsultationVM.OC_Konsultationer}" Height="203" Margin="0,-1,0,565">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Konsultation">
                     <StackPanel Orientation="Horizontal">
                         <TextBox IsReadOnly="True" Text="{x:Bind  Konsultation_date, Mode=OneTime}"/>
                         <TextBox IsReadOnly="True" Text="{x:Bind Vejleder.Vejleder_navn, Mode=OneTime}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Header="Kontaktinformation" x:Name="KundeLogs_Copy" ItemsSource="{x:Bind Path=KonsultationVM.OC_Vejledere}" Height="203" Margin="0,302,0,263">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Vejleder">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox IsReadOnly="True" Text="{x:Bind Mode=OneTime, Path=Vejleder_navn}"/>
+                        <TextBox IsReadOnly="True" Text="{x:Bind Mode=OneTime, Path=Vejleder_email}"/>
+                        <TextBox IsReadOnly="True" Text="{x:Bind Mode=OneTime, Path=Vejleder_tlfnr}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
