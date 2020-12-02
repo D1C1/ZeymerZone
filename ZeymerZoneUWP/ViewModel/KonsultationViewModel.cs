@@ -8,33 +8,33 @@ namespace ZeymerZoneUWP.ViewModel
 {
     class KonsultationViewModel
     {
-    }
 
-    #region Henter kunde
-    public Kunde CurrentKunde
-    {
-        get
+        #region Henter kunde
+        public Kunde CurrentKunde
         {
-            return _currentKunde;
+            get
+            {
+                return _currentKunde;
+            }
+            set
+            {
+                _currentKunde = value;
+                NotifyPropertyChanged();
+            }
         }
-        set
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
-            _currentKunde = value;
-            NotifyPropertyChanged();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
+        private async void SetCurrent()
+        {
+            CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+        }
+
+        #endregion
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-    private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-
-    private async void SetCurrent()
-    {
-        CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
-    }
-
-    #endregion
 }
