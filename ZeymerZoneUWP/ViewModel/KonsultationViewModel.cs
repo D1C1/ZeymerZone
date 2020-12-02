@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -16,7 +17,22 @@ namespace ZeymerZoneUWP
         {
             SetCurrent();
         }
+        public ICollection<Konsultation> Konsultationer { get; set; }
+        public ICollection<Vejleder> Vejledere { get; set; }
+        public ObservableCollection<Konsultation> OC_Konsultationer { get; set; }
+        public ObservableCollection<Konsultation> OC_Vejledere { get; set; }
 
+        private void GetKonsultations()
+        {
+            Konsultationer = PersistencyService<ICollection<Konsultation>>.HentData("konsultations").Result;
+            foreach (var item in Konsultationer)
+            {
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
+                {
+                    OC_Konsultationer.Add(item);
+                }
+            }
+        }
         #region Henter kunde
         public Kunde CurrentKunde
         {
