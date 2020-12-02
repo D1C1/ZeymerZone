@@ -22,8 +22,10 @@ namespace ZeymerZoneUWP
     /// </summary>
     public sealed partial class Opretkonsultationer : Page
     {
+        public KonsultationViewModel KonsultationVM { get; set; }
         public Opretkonsultationer()
         {
+            KonsultationVM = new KonsultationViewModel();
             this.InitializeComponent();
         }
     }
