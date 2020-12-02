@@ -67,16 +67,17 @@ namespace ZeymerZoneUWP
         #endregion
 
         public ObservableCollection<Kostplan> OC_Kostplaner { get; set; } = new ObservableCollection<Kostplan>();
-        public Kostplan SelectedKostplan { 
-            get 
-            { 
-                 return _selectedKostplan;
-            } 
-            set 
-            { 
+        public Kostplan SelectedKostplan
+        {
+            get
+            {
+                return _selectedKostplan;
+            }
+            set
+            {
                 _selectedKostplan = value;
-                
-            } 
+
+            }
         }
 
         /// <summary>
@@ -84,12 +85,12 @@ namespace ZeymerZoneUWP
         /// </summary>
         public async void SetKostplan()
         {
-            
+
             Kostplaner = await PersistencyService<ICollection<Kostplan>>.HentData("kostplans");
-            
+
         }
 
-        public ICollection<Kostplan>  Kostplaner { get; set; }
+        public ICollection<Kostplan> Kostplaner { get; set; }
 
         #region SetKostplanDays
         public void SetKostplanMonday()
@@ -97,9 +98,12 @@ namespace ZeymerZoneUWP
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Mandag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Mandag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
@@ -109,21 +113,26 @@ namespace ZeymerZoneUWP
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Tirsdag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Tirsdag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
-
         public void SetKostplanWednesday()
         {
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Onsdag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Onsdag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
@@ -133,9 +142,12 @@ namespace ZeymerZoneUWP
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Torsdag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Torsdag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
@@ -145,9 +157,12 @@ namespace ZeymerZoneUWP
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Fredag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Fredag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
@@ -157,9 +172,12 @@ namespace ZeymerZoneUWP
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Lørdag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Lørdag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
@@ -169,13 +187,16 @@ namespace ZeymerZoneUWP
             OC_Kostplaner.Clear();
             foreach (var item in Kostplaner)
             {
-                if (item.Ugedag == "Søndag")
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    OC_Kostplaner.Add(item);
+                    if (item.Ugedag == "Søndag")
+                    {
+                        OC_Kostplaner.Add(item);
+                    }
                 }
             }
         }
 
-#endregion
+        #endregion
     }
 }

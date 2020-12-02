@@ -16,15 +16,15 @@
         </Grid>
         <Grid Margin="0,0,0,78">
             <StackPanel Margin="0,40,0,0">
-                <TextBox PlaceholderText="Navn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Telefon" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Email" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Password" Text="{x:Bind BrugerVM.CurrentKunde.Password, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox PlaceholderText="Navn" Text="{x:Bind BrugerVM.TempKunde.Kunde_navn, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox PlaceholderText="Telefon" Text="{x:Bind BrugerVM.TempKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox PlaceholderText="Email" Text="{x:Bind BrugerVM.TempKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox PlaceholderText="Password" Text="{x:Bind BrugerVM.TempKunde.Password, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox PlaceholderText="Gentag Password" Text="{x:Bind BrugerVM.RepeatPassword, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.TempKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.TempKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.TempKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.TempKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <DatePicker Date="{x:Bind BrugerVM.FoedselsdagOffset, Mode=TwoWay}" Header="Fødselsdag" Width="430"/>
                 <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}"/>
                 <TextBox IsReadOnly="True" Text="{x:Bind BrugerVM.Status, Mode=TwoWay}" TextWrapping="Wrap"/>

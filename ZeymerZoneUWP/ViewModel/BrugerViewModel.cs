@@ -15,10 +15,12 @@ namespace ZeymerZoneUWP
     {
         public static Kunde _currentKunde;
         private string _status;
+        private Kunde _tempKunde;
 
         public BrugerViewModel()
         {
-            CurrentKunde = new Kunde();
+            _currentKunde = new Kunde();
+            _tempKunde = new Kunde();
             SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
@@ -42,6 +44,18 @@ namespace ZeymerZoneUWP
             set
             {
                 _currentKunde = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public Kunde TempKunde
+        {
+            get
+            {
+                return _tempKunde;
+            }
+            set
+            {
+                _tempKunde = value;
                 NotifyPropertyChanged();
             }
         }
@@ -100,19 +114,19 @@ namespace ZeymerZoneUWP
         /// </summary>
         private void Gemkunde()
         {
-            CurrentKunde = new Kunde();
-            CurrentKunde.Kunde_foedeselsdag = FoedselsdagOffset.DateTime;
-            if (CurrentKunde.Password != RepeatPassword)
+            //CurrentKunde = new Kunde();
+            TempKunde.Kunde_foedeselsdag = FoedselsdagOffset.DateTime;
+            if (TempKunde.Password != RepeatPassword)
             {
                 Status = "Password matcher ikke hinanden";
             }
-            else if (CurrentKunde.Password == null)
+            else if (TempKunde.Password == null)
             {
                 Status = "Password must be different to null";
             }
             else
             {
-                PersistencyService<Kunde>.GemData("kundes", CurrentKunde);
+                PersistencyService<Kunde>.GemData("kundes", TempKunde);
             }
             
         }

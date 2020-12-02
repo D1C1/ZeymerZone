@@ -13,7 +13,7 @@ namespace ZeymerZoneUWP
     {
         private Kunde _currentKunde;
         private Log newLog;
-        
+
 
         public LogViewModel()
         {
@@ -22,16 +22,17 @@ namespace ZeymerZoneUWP
             ShowLogsKnap = new RelayCommand(GetLogs);
             GemLogKnap = new RelayCommand(GemLog);
             ShowAllLogsKnap = new RelayCommand(GetAllLogs);
-            
+
         }
 
         public RelayCommand ShowLogsKnap { get; set; }
         public RelayCommand ShowAllLogsKnap { get; set; }
         public RelayCommand GemLogKnap { get; set; }
 
-        public Log NewLog {
+        public Log NewLog
+        {
             get { return newLog; }
-            set { newLog = value; } 
+            set { newLog = value; }
         }
 
         private void GemLog()
@@ -52,9 +53,11 @@ namespace ZeymerZoneUWP
             KundeLogs = PersistencyService<ICollection<Log>>.HentData("logs").Result;
             OC_KundeLogs.Clear();
             foreach (var item in KundeLogs)
-            {               
+            {
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
+                {
                     OC_KundeLogs.Add(item);
-                
+                }
             }
         }
 
@@ -64,16 +67,19 @@ namespace ZeymerZoneUWP
             OC_KundeLogs.Clear();
             foreach (var item in KundeLogs)
             {
-                if (CompareDate != null)
+                if (item.Kunde_Id == CurrentKunde.Kunde_Id)
                 {
-                    if (item.Log_date == CompareDate.Date)
+                    if (CompareDate != null)
+                    {
+                        if (item.Log_date == CompareDate.Date)
+                        {
+                            OC_KundeLogs.Add(item);
+                        }
+                    }
+                    else
                     {
                         OC_KundeLogs.Add(item);
                     }
-                }
-                else
-                {
-                    OC_KundeLogs.Add(item);
                 }
             }
         }
