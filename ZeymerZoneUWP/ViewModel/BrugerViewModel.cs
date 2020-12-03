@@ -26,9 +26,9 @@ namespace ZeymerZoneUWP
             OpretKnap = new RelayCommand(Gemkunde);
             SletKnap = new RelayCommand(SletKunde);
             OpdaterKnap = new RelayCommand(OpdaterKundeAsync);
-            
+
         }
-        
+
 
         public string Status
         {
@@ -37,7 +37,7 @@ namespace ZeymerZoneUWP
         }
         public Kunde CurrentKunde
         {
-            get 
+            get
             {
                 return _currentKunde;
             }
@@ -128,7 +128,7 @@ namespace ZeymerZoneUWP
             {
                 PersistencyService<Kunde>.GemData("kundes", TempKunde);
             }
-            
+
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace ZeymerZoneUWP
         }
         public async void OpdaterKundeAsync()
         {
-            PersistencyService<Kunde>.UpdateData("kundes",CurrentKunde,CurrentKunde.Kunde_Id);
+            PersistencyService<Kunde>.UpdateData("kundes", CurrentKunde, CurrentKunde.Kunde_Id);
             await PersistencyService<Kunde>.GemDataDisk(CurrentKunde, "KundeCurrent");
         }
         public void SletKunde()
@@ -175,7 +175,7 @@ namespace ZeymerZoneUWP
                 }
             }
             // slet nødvendige 
-            PersistencyService<Kunde>.FjernData("kundes",CurrentKunde.Kunde_Id);
+            PersistencyService<Kunde>.FjernData("kundes", CurrentKunde.Kunde_Id);
         }
 
     }
