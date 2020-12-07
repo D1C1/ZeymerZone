@@ -26,6 +26,7 @@ namespace ZeymerZoneUWP
             Friday = new RelayCommand(SetKostplanFriday);
             Saturday = new RelayCommand(SetKostplanSaturday);
             Sunday = new RelayCommand(SetKostplanSunday);
+            AllDays = new RelayCommand(SetKostplanAllDays);
         }
 
         public RelayCommand Monday { get; set; }
@@ -35,6 +36,7 @@ namespace ZeymerZoneUWP
         public RelayCommand Friday { get; set; }
         public RelayCommand Saturday { get; set; }
         public RelayCommand Sunday { get; set; }
+        public RelayCommand AllDays { get; set; }
 
 
         #region Henter kunde
@@ -93,6 +95,18 @@ namespace ZeymerZoneUWP
         public ICollection<Kostplan> Kostplaner { get; set; }
 
         #region SetKostplanDays
+
+        public void SetKostplanAllDays()
+        {
+            OC_Kostplaner.Clear();
+            foreach (var item in Kostplaner)
+            {
+                if(item.Kunde_Id == CurrentKunde.Kunde_Id)
+                {
+                    OC_Kostplaner.Add(item);
+                }
+            }
+        }
 
         public void SetKostplanDay(string day)
         {

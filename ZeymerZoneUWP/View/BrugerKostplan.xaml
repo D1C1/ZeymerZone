@@ -39,5 +39,6 @@
             <Button Content="Log" Margin="245,0,0,0" Click="Button_Click_2"/>
             <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" />
         </Grid>
+        <Button Content="Vis Alle" Margin="10,384,0,0" Height="30" Width="110" Command="{x:Bind Mode=OneWay, Path=KostplanVM.AllDays}" VerticalAlignment="Top"/>
     </Grid>
 </Page>
