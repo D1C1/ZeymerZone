@@ -89,6 +89,7 @@ namespace ZeymerZoneUWP
         {
 
             Kostplaner = await PersistencyService<ICollection<Kostplan>>.HentData("kostplans");
+            
 
         }
 
@@ -111,12 +112,14 @@ namespace ZeymerZoneUWP
         public void SetKostplanDay(string day)
         {
             OC_Kostplaner.Clear();
-            foreach (var item in Kostplaner)
-            {
-                if(item.Kunde_Id == CurrentKunde.Kunde_Id && item.Ugedag == day) 
-                {                   
+            var kostplanset = from k in Kostplaner
+                              where k.Ugedag == day
+                              select k;
+            List<Kostplan> newlist = kostplanset.ToList();
+
+            foreach (var item in newlist.FindAll(e => e.Kunde_Id == CurrentKunde.Kunde_Id).ToList<Kostplan>())
+            {   
                     OC_Kostplaner.Add(item);                    
-                }
             }
         }
 
