@@ -17,7 +17,9 @@
             <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" />
         </Grid>
         <Grid Margin="0,0,0,78">
-            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,36,0,0" Text="Welcome to the ZeymerZone" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="149" FontSize="20"/>
+            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,36,0,0" 
+                       Text="Welcome to the ZeymerZone" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Height="64" Width="149" FontSize="20"/>
         </Grid>
     </Grid>
 </Page>
