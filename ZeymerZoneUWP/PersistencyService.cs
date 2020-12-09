@@ -15,7 +15,7 @@ namespace ZeymerZoneUWP
         //Ensure tha this is the same URL as applied under 
         //Properties->Web->Project URL in the web service project 
         //databasefiler
-        const string serverUrl = "http://localhost:57648/";
+        const string serverUrl = "https://zzwebservice.azurewebsites.net/";
         public static void GemData(string controllerNavn, T nyData)
         {
             HttpClientHandler handler = new HttpClientHandler();
