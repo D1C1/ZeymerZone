@@ -24,11 +24,14 @@ namespace ZeymerZoneWebService
 
         public int Vejleder_Id { get; set; }
 
+
         [Column(TypeName = "date")]
         public DateTime Log_date { get; set; }
 
         public virtual Kunde Kunde { get; set; }
 
         public virtual Vejleder Vejleder { get; set; }
+
+        public int Kunde_vaegt_dd { get; set; }
     }
 }

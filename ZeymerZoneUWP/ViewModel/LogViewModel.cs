@@ -40,6 +40,7 @@ namespace ZeymerZoneUWP
             NewLog.Kunde_Id = CurrentKunde.Kunde_Id;
             NewLog.Vejleder_Id = 1;
             NewLog.Log_date = DateTime.Now;
+            NewLog.Kunde_vaegt_dd = CurrentKunde.Kunde_vaegt;
             PersistencyService<Log>.GemData("logs", NewLog);
         }
 
