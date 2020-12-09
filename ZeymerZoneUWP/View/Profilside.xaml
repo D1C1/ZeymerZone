@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
+        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <Button Content="Home" Margin="10,0,0,0" Click="Button_Click_3"/>
             <Button Content="Profil" Margin="82,0,0,0" Click="Button_Click"/>
             <Button Content="Kostplan" Click="Button_Click_1" Margin="155,0,0,0"/>

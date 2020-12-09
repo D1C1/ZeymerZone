@@ -28,7 +28,7 @@
         <Button Content="Opret log" Margin="0,436,0,0" VerticalAlignment="Top" Height="31" Width="169" Click="Button_Click_4"></Button>
         <DatePicker Header="Sort date" x:Name="selectDate" Date="{x:Bind LogVM.CompareDate, Mode=TwoWay}" Margin="0,495,0,0" VerticalAlignment="Top"/>
         <Button Content="Vis alle logs" Command="{x:Bind LogVM.ShowAllLogsKnap}" Margin="0,384,0,0" VerticalAlignment="Top" Height="34" Width="177"></Button>
-        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top">
+        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <Button Content="Home" Margin="10,0,0,0" Click="Button_Click_3"/>
             <Button Content="Profil" Margin="82,0,0,0" Click="Button_Click"/>
             <Button Content="Kostplan" Click="Button_Click_1" Margin="155,0,0,0"/>
