@@ -39,34 +39,7 @@ namespace ZeymerZoneUWP
         public RelayCommand AllDays { get; set; }
 
 
-        #region Henter kunde
-        public Kunde CurrentKunde
-        {
-            get
-            {
-                return _currentKunde;
-            }
-            set
-            {
-                _currentKunde = value;
-                NotifyPropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
-        private async void SetCurrent()
-        {
-            CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
-            SetKostplan();
-        }
-
-        #endregion
+        
 
         public ObservableCollection<Kostplan> OC_Kostplaner { get; set; } = new ObservableCollection<Kostplan>();
         public Kostplan SelectedKostplan
@@ -156,6 +129,36 @@ namespace ZeymerZoneUWP
         public void SetKostplanSunday()
         {
             SetKostplanDay("Søndag");
+        }
+
+        #endregion
+
+        #region Henter kunde
+        public Kunde CurrentKunde
+        {
+            get
+            {
+                return _currentKunde;
+            }
+            set
+            {
+                _currentKunde = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        private async void SetCurrent()
+        {
+            CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            SetKostplan();
+            SetKostplanAllDays();
         }
 
         #endregion
