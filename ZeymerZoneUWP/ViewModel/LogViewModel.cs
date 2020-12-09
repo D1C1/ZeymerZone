@@ -21,8 +21,7 @@ namespace ZeymerZoneUWP
             NewLog = new Log();
             ShowLogsKnap = new RelayCommand(GetLogs);
             GemLogKnap = new RelayCommand(GemLog);
-            ShowAllLogsKnap = new RelayCommand(GetAllLogs);
-
+            ShowAllLogsKnap = new RelayCommand(GetAllLogs);            
         }
 
         public RelayCommand ShowLogsKnap { get; set; }
@@ -111,6 +110,7 @@ namespace ZeymerZoneUWP
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            GetAllLogs();
         }
 
         #endregion
