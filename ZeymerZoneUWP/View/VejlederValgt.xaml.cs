@@ -25,6 +25,9 @@ namespace ZeymerZoneUWP
         public VejlederValgt()
         {
             this.InitializeComponent();
+            VejlederVM = new VejlederViewModel();
         }
+
+        public VejlederViewModel VejlederVM { get; set; }
     }
 }

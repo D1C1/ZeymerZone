@@ -12,12 +12,11 @@ namespace ZeymerZoneUWP
     public class VejlederViewModel : INotifyPropertyChanged
     {
         public VejlederViewModel()
-        {
-            CurrentVejleder = new Vejleder();
+        {            
             SetVejleder();
         }
 
-        private static Vejleder _currentVejleder;
+        public static Vejleder _currentVejleder;
 
         public Vejleder CurrentVejleder
         {
