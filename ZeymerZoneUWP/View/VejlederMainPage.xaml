@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel Margin="0,93,0,0">
+        <StackPanel Margin="0,93,0,403">
             <ListView SelectedItem="{x:Bind VejlederVM.CurrentVejleder, Mode=TwoWay}" ItemsSource="{x:Bind VejlederVM.OC_Vejledere}" x:Name="VejlederList" Header="Vælg dig selv">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Vejleder">
@@ -23,6 +23,7 @@
             </ListView>
         </StackPanel>
         <HyperlinkButton Content="BrugerMainPage" Margin="323,10,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
+        <Button Content="Vælg" Margin="27,399,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
