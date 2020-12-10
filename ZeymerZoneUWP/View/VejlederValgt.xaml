@@ -9,15 +9,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox Margin="0,0,307,728" IsReadOnly="True" Text="{x:Bind VejlederVM.CurrentVejleder.Vejleder_navn}"/>
-        <StackPanel Margin="0,84,307,506">
+        <TextBox Margin="0,0,172,733" IsReadOnly="True" Text="{x:Bind VejlederVM.CurrentVejleder.Vejleder_navn}"/>
+        <StackPanel Margin="0,100,312,463" Grid.Row="2">
             <Button Content="Vælg Klient" Height="32" Width="108"/>
             <Button Content="Opret Konsultation" Height="32" Width="108"/>
             <Button Content="Giv feedback" Height="32" Width="108"/>
             <Button Content="Gamle Klienter" Height="32" Width="108"/>
             <Button Content="Vælg Klient" Height="32" Width="108"/>
-            
+
         </StackPanel>
+        <ListView Margin="168,433,132,10"/>
+        <ListView Margin="300,433,0,0"/>
 
     </Grid>
 </Page>
