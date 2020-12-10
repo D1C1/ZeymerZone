@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="ZeymerZoneUWP.VejlederMainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ZeymerZoneUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Margin="0,93,0,0">
+            <ListView SelectedItem="{x:Bind VejlederVM.CurrentVejleder, Mode=TwoWay}" ItemsSource="{x:Bind VejlederVM.OC_Vejledere}" x:Name="VejlederList" Header="Vælg dig selv">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Vejleder">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox IsReadOnly="True" Text="{x:Bind Mode=OneTime, Path=Vejleder_navn}"/>
+                            <TextBox IsReadOnly="True" Text="{x:Bind Mode=OneTime, Path=Vejleder_email}"/>
+                            <TextBox IsReadOnly="True" Text="{x:Bind Mode=OneTime, Path=Vejleder_tlfnr}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <HyperlinkButton Content="BrugerMainPage" Margin="323,10,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
+
+    </Grid>
+</Page>

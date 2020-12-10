@@ -22,9 +22,7 @@ namespace ZeymerZoneUWP
         public Vejleder CurrentVejleder
         {
             get { return _currentVejleder; }
-            set { _currentVejleder = value;
-                NotifyPropertyChanged();
-            }
+            set { _currentVejleder = value; }
         }
 
         public ObservableCollection<Vejleder> OC_Vejledere { get; set; } = new ObservableCollection<Vejleder>();
