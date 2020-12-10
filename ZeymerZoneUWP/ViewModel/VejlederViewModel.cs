@@ -7,17 +7,17 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZeymerZoneUWP.ViewModel
+namespace ZeymerZoneUWP
 {
     public class VejlederViewModel : INotifyPropertyChanged
     {
         public VejlederViewModel()
         {
-            CurrentVejleder = new Vejleder(); 
-            
+            CurrentVejleder = new Vejleder();
+            SetVejleder();
         }
 
-        private Vejleder _currentVejleder;
+        private static Vejleder _currentVejleder;
 
         public Vejleder CurrentVejleder
         {
@@ -39,6 +39,8 @@ namespace ZeymerZoneUWP.ViewModel
                 OC_Vejledere.Add(item);
             }
         }
+
+
 
 
 
