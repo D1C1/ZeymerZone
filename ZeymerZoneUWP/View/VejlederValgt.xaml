@@ -9,17 +9,40 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox Margin="0,0,172,733" IsReadOnly="True" Text="{x:Bind VejlederVM.CurrentVejleder.Vejleder_navn}"/>
+        <TextBox Margin="162,0,10,733" IsReadOnly="True" Text="{x:Bind VejlederVM.CurrentVejleder.Vejleder_navn}"/>
         <StackPanel Margin="0,100,312,463" Grid.Row="2">
-            <Button Content="Vælg Klient" Height="32" Width="108"/>
             <Button Content="Opret Konsultation" Height="32" Width="108"/>
             <Button Content="Giv feedback" Height="32" Width="108"/>
-            <Button Content="Gamle Klienter" Height="32" Width="108"/>
-            <Button Content="Vælg Klient" Height="32" Width="108"/>
+            <Button Content="Vælg " Height="32" Width="108"/>
 
         </StackPanel>
-        <ListView Margin="168,433,132,10"/>
-        <ListView Margin="300,433,0,0"/>
+        <ListView Name="Kunder" Margin="279,100,10,445" ItemsSource="{x:Bind VejlederVM.OC_Kunder}" SelectedItem="{x:Bind VejlederVM.NewKunde, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Kunde">
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind Kunde_navn}"/>
+                        <TextBlock Text="{x:Bind Kunde_tlfnr}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView x:Name="Logs" Margin="10,433,300,11" ItemsSource="{x:Bind VejlederVM.OC_Logs}" SelectedItem="{x:Bind VejlederVM.SelectedLog, Mode=TwoWay}" BorderBrush="White" BorderThickness="1">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Log">
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind Overskrift}"/>
+                        <TextBlock Text="{x:Bind Log_date}"/>
+                        <TextBlock Text="{x:Bind Kunde_vaegt_dd}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel DataContext="{Binding SelectedItem, ElementName=Logs}" Margin="237,433,10,11" BorderBrush="White" BorderThickness="1">
+            <TextBlock  TextWrapping="Wrap" Text="{Binding Log1}" Height="318" Width="184"/>
+        </StackPanel>
+        <Button Content="Vælg Klient" Height="32" Width="108" Command="{x:Bind VejlederVM.LoadLogKnap, Mode=OneWay}" Margin="279,328,0,0" VerticalAlignment="Top"/>
+        <Button Content="Tilbage" Margin="-2,3,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Page>
