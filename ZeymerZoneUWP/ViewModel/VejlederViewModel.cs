@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -74,9 +75,9 @@ namespace ZeymerZoneUWP
         {
             Kunder = await PersistencyService<ICollection<Kunde>>.HentData("kundes");
             foreach (var item in Kunder)
-            {
+            {                      
                 OC_Kunder.Add(item);
-            }
+            }                         
         }
 
         public async void SetLogs()

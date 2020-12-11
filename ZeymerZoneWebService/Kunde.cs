@@ -5,6 +5,7 @@ namespace ZeymerZoneWebService
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Data.SqlTypes;
 
     [Table("Kunde")]
     public partial class Kunde
@@ -44,6 +45,8 @@ namespace ZeymerZoneWebService
         public int Kunde_vaegt { get; set; }
 
         public int Kunde_hoejde { get; set; }
+
+        //public Boolean Kunde_aktiv { get; set; }
 
         [Required]
         [StringLength(50)]
