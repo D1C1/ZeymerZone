@@ -13,8 +13,6 @@
         <StackPanel Margin="0,100,312,463" Grid.Row="2">
             <Button Content="Opret Konsultation" Height="32" Width="108"/>
             <Button Content="Giv feedback" Height="32" Width="108"/>
-            <Button Content="Vælg " Height="32" Width="108"/>
-
         </StackPanel>
         <ListView Name="Kunder" Margin="279,100,10,445" ItemsSource="{x:Bind VejlederVM.OC_Kunder}" SelectedItem="{x:Bind VejlederVM.NewKunde, Mode=TwoWay}">
             <ListView.ItemTemplate>
