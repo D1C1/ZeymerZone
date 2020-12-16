@@ -10,13 +10,14 @@
 
     <Grid>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
-            <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_2"/>
-            <Button Content="Login" Margin="125,0,0,0" Click="Button_Click"/>
-            <Button Content="Opret bruger" Margin="225,0,0,0" Click="Button_Click_1"/>
+            <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_2" ToolTipService.ToolTip="Gå til startside"/>
+            <Button Content="Login" Margin="125,0,0,0" Click="Button_Click" ToolTipService.ToolTip="Gå til login side"/>
+            <Button Content="Opret bruger" Margin="225,0,0,0" Click="Button_Click_1" ToolTipService.ToolTip="Gå til opret ny bruger"/>
         </Grid>
         <Grid Margin="0,0,0,78">
             <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,36,0,0" Text="Welcome to the ZeymerZone" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="149" FontSize="20"/>
-            <HyperlinkButton Content="VejlederMainPage" Margin="319,0,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
+            <HyperlinkButton Content="VejlederMainPage" Margin="319,0,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"
+                ToolTipService.ToolTip="Starter vejleder programmet vil ikke være tilgængeligt for kunde"/>
         </Grid>
     </Grid>
 </Page>
