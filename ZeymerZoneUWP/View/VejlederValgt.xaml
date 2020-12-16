@@ -5,10 +5,16 @@
     xmlns:local="using:ZeymerZoneUWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+    <muxc:InfoBar
+    IsOpen="True"
+    Severity="Warning"
+    Title="Advarsel"
+    Message="Dette view er ikke færdigt. Nogle funktioner virker måske ikke." />
         <TextBox Margin="162,0,10,733" IsReadOnly="True" Text="{x:Bind VejlederVM.CurrentVejleder.Vejleder_navn}"/>
         <StackPanel Margin="0,100,312,463" Grid.Row="2">
             <Button Content="Opret Konsultation" Height="32" Width="108"/>
