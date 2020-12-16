@@ -59,7 +59,10 @@ namespace ZeymerZoneUWP
             get { return _currentVejleder; }
             set { _currentVejleder = value; }
         }
-      
+        
+        /// <summary>
+        /// Henter alle vejledere til OC
+        /// </summary>
         public async void SetVejleder()
         {
             Vejledere = await PersistencyService<ICollection<Vejleder>>.HentData("vejleders");
@@ -69,8 +72,9 @@ namespace ZeymerZoneUWP
             }
         }
 
-        
-
+        /// <summary>
+        /// Henter alle kunder til OC
+        /// </summary>
         public async void SetKunder()
         {
             Kunder = await PersistencyService<ICollection<Kunde>>.HentData("kundes");
@@ -80,6 +84,9 @@ namespace ZeymerZoneUWP
             }                         
         }
 
+        /// <summary>
+        /// Henter alle logs til valgte kunde
+        /// </summary>
         public async void SetLogs()
         {
             Logs = await PersistencyService<ICollection<Log>>.HentData("logs");
