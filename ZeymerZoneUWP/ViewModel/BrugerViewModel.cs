@@ -148,6 +148,10 @@ namespace ZeymerZoneUWP
             PersistencyService<Kunde>.UpdateData("kundes", CurrentKunde, CurrentKunde.Kunde_Id);
             await PersistencyService<Kunde>.GemDataDisk(CurrentKunde, "KundeCurrent");
         }
+
+        /// <summary>
+        /// Metode til at slette bruger fra database
+        /// </summary>
         public void SletKunde()
         {
             // load alle kostplaner
