@@ -46,11 +46,11 @@ namespace ZeymerZoneUWP
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if (true)// hvis vi kan logge ind 
-            {
+            //if (BrugerVM.Kundesat)// hvis vi kan logge ind 
+            //{
                 // gem kunde info som current kunde på drev
-                this.Frame.Navigate(typeof(MainPageLoggetInd));
-            }
+                //this.Frame.Navigate(typeof(MainPageLoggetInd));
+            //}
         }
     }
 }

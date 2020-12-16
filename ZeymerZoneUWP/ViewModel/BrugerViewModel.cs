@@ -16,11 +16,13 @@ namespace ZeymerZoneUWP
         public static Kunde _currentKunde;
         private string _status;
         private Kunde _tempKunde;
+        private INavigationService _navigationService;
 
         public BrugerViewModel()
         {
             _currentKunde = new Kunde();
             _tempKunde = new Kunde();
+            _navigationService = new NavigationService();
             SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
@@ -29,7 +31,7 @@ namespace ZeymerZoneUWP
 
         }
 
-
+        #region Properties
         public string Status
         {
             get { return _status; }
@@ -78,6 +80,8 @@ namespace ZeymerZoneUWP
             {
             }
         }
+        #endregion
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
@@ -98,6 +102,7 @@ namespace ZeymerZoneUWP
                 if (item.Kunde_email == username && item.Password == password)
                 {
                     await PersistencyService<Kunde>.GemDataDisk(item, "KundeCurrent");
+                    _navigationService.Navigate(typeof(MainPageLoggetInd));
                     return;
                 }
             }

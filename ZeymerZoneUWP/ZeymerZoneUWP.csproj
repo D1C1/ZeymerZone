@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NavigationService.cs" />
     <Compile Include="View\VejlederValgt.xaml.cs">
       <DependentUpon>VejlederValgt.xaml</DependentUpon>
     </Compile>
