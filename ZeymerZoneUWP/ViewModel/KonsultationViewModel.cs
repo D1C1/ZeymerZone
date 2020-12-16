@@ -23,6 +23,10 @@ namespace ZeymerZoneUWP
         public ObservableCollection<Konsultation> OC_Konsultationer { get; set; } = new ObservableCollection<Konsultation>();
         public ObservableCollection<Vejleder> OC_Vejledere { get; set; } = new ObservableCollection<Vejleder>();
 
+        
+        /// <summary>
+        /// Henter vejledere og konsultationer som passer til CurrentKunde
+        /// </summary>
         private void GetData()
         {
             Konsultationer = PersistencyService<ICollection<Konsultation>>.HentData("konsultations").Result;
@@ -66,7 +70,9 @@ namespace ZeymerZoneUWP
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
+        /// <summary>
+        /// Henter kunde som er logget ind fra disk og sætter til CurrentKunde
+        /// </summary>
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
