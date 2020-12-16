@@ -15,7 +15,7 @@ namespace ZeymerZoneTestConsole
         {
             //Ensure tha this is the same URL as applied under 
             //Properties->Web->Project URL in the web service project 
-            const string serverUrl = "http://localhost:57648/";
+            const string serverUrl = "https://zzwebservice.azurewebsites.net/";
 
             //Setup client handler
             HttpClientHandler handler = new HttpClientHandler();
