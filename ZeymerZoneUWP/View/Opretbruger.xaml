@@ -10,9 +10,9 @@
 
     <Grid>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
-            <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_2"/>
-            <Button Content="Login" Margin="125,0,0,0" Click="Button_Click"/>
-            <Button Content="Opret bruger" Margin="225,0,0,0" Click="Button_Click_1"/>
+            <Button Content="Home" Margin="25,0,0,0" Click="Button_Click_2" ToolTipService.ToolTip="Gå til startside"/>
+            <Button Content="Login" Margin="125,0,0,0" Click="Button_Click" ToolTipService.ToolTip="Gå til login side"/>
+            <Button Content="Opret bruger" Margin="225,0,0,0" Click="Button_Click_1" ToolTipService.ToolTip="Gå til opret ny bruger"/>
         </Grid>
         <Grid Margin="0,0,0,78">
             <StackPanel Margin="0,40,0,0">
@@ -26,7 +26,7 @@
                 <TextBox PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.TempKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.TempKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <DatePicker Date="{x:Bind BrugerVM.FoedselsdagOffset, Mode=TwoWay}" Header="Fødselsdag" Width="430"/>
-                <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}"/>
+                <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}" ToolTipService.ToolTip="Opretter kunde på database"/>
                 <TextBox IsReadOnly="True" Text="{x:Bind BrugerVM.Status, Mode=TwoWay}" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
