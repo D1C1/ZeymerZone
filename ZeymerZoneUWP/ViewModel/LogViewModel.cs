@@ -34,6 +34,9 @@ namespace ZeymerZoneUWP
             set { newLog = value; }
         }
 
+        /// <summary>
+        /// Metoder som gemmer kundens log på databasen
+        /// </summary>
         private void GemLog()
         {
             NewLog.Kunde_Id = CurrentKunde.Kunde_Id;
@@ -48,6 +51,9 @@ namespace ZeymerZoneUWP
         public ObservableCollection<Log> OC_KundeLogs { get; set; } = new ObservableCollection<Log>();
         public ICollection<Log> KundeLogs { get; set; }
 
+        /// <summary>
+        /// Henter alle nuværende kundes logs
+        /// </summary>
         private void GetAllLogs()
         {
             KundeLogs = PersistencyService<ICollection<Log>>.HentData("logs").Result;
@@ -61,6 +67,9 @@ namespace ZeymerZoneUWP
             }
         }
 
+        /// <summary>
+        /// Henter logs fra specifik dato
+        /// </summary>
         private void GetLogs()
         {
             KundeLogs = PersistencyService<ICollection<Log>>.HentData("logs").Result;
@@ -106,7 +115,9 @@ namespace ZeymerZoneUWP
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
+        /// <summary>
+        /// Henter information på kunden som er logget ind
+        /// </summary>
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
