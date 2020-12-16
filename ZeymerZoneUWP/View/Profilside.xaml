@@ -18,13 +18,13 @@
         </Grid>
         <Grid Margin="0,0,0,78">
             <StackPanel Margin="0,140,0,235">
-                <TextBox PlaceholderText="Navn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Telefon" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Email" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Navn" PlaceholderText="Navn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
+                <TextBox Header="Telefonnummer" PlaceholderText="Telefonnummer" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox Header="Email" PlaceholderText="Email" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox Header="Vejnavn" PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Postnummer" PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Vægt i kg" PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Højde i cm" PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBlock Text="Fødselsdag" TextWrapping="Wrap"/>
                 <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat,Mode=OneWay}" TextWrapping="Wrap"/>
             </StackPanel>
