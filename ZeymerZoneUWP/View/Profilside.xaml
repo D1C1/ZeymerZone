@@ -28,7 +28,7 @@
                 <TextBlock Text="Fødselsdag" TextWrapping="Wrap"/>
                 <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat,Mode=OneWay}" TextWrapping="Wrap"/>
             </StackPanel>
-            <Button Content="Opdater bruger" Command="{x:Bind Path=BrugerVM.OpdaterKnap, Mode=OneWay}" Margin="58,458,0,0" VerticalAlignment="Top"/>
+            <Button Content="Opdater bruger" Command="{x:Bind Path=BrugerVM.OpdaterKnap, Mode=OneWay}" Margin="58,458,0,0" VerticalAlignment="Top" ToolTipService.ToolTip="Opdaterer bruger på vores database"/>
             <Button Content="Slet bruger" Margin="250,458,0,0" VerticalAlignment="Top">
                 <Button.Flyout>
                 <Flyout>
