@@ -50,5 +50,10 @@ namespace ZeymerZoneUWP
         {
             this.Frame.Navigate(typeof(BrugerKonsultationer));
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }
