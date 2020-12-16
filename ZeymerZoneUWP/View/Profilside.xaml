@@ -17,7 +17,7 @@
             <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
         </Grid>
         <Grid Margin="0,0,0,78">
-            <StackPanel Margin="0,140,0,235">
+            <StackPanel Margin="10,10,10,235">
                 <TextBox Header="Navn" PlaceholderText="Navn" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_navn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
                 <TextBox Header="Telefonnummer" PlaceholderText="Telefonnummer" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
                 <TextBox Header="Email" PlaceholderText="Email" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
