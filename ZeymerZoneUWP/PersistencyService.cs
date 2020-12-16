@@ -16,6 +16,12 @@ namespace ZeymerZoneUWP
         //Properties->Web->Project URL in the web service project 
         //databasefiler
         const string serverUrl = "https://zzwebservice.azurewebsites.net/";
+        
+        /// <summary>
+        /// Metode til at gemme data på database
+        /// </summary>
+        /// <param name="controllerNavn"></param>
+        /// <param name="nyData"></param>
         public static void GemData(string controllerNavn, T nyData)
         {
             HttpClientHandler handler = new HttpClientHandler();
@@ -45,6 +51,12 @@ namespace ZeymerZoneUWP
             }
 
         }
+
+        /// <summary>
+        /// Metode til at hente data fra database
+        /// </summary>
+        /// <param name="controllerNavn"></param>
+        /// <returns></returns>
         public static Task<T> HentData(string controllerNavn)
         {
 
@@ -85,6 +97,13 @@ namespace ZeymerZoneUWP
             }
 
         }
+
+        /// <summary>
+        /// Metode til at hente data fra specifik entry
+        /// </summary>
+        /// <param name="controllerNavn"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static Task<T> HentData(string controllerNavn, int key)
         {
             //Setup client handler
@@ -124,6 +143,13 @@ namespace ZeymerZoneUWP
             }
 
         }
+
+        /// <summary>
+        /// Metode til at opdatere data på specifik entry
+        /// </summary>
+        /// <param name="controllerNavn"></param>
+        /// <param name="dataToBeUpdated"></param>
+        /// <param name="key"></param>
         public static void UpdateData(string controllerNavn,T dataToBeUpdated, int key)
         {
             //Setup client handler
@@ -154,6 +180,12 @@ namespace ZeymerZoneUWP
             }
 
         }
+
+        /// <summary>
+        /// Metode til at fjerne specifik entry
+        /// </summary>
+        /// <param name="controllerNavn"></param>
+        /// <param name="key"></param>
         public static void FjernData(string controllerNavn,int key)
         {
             //Setup client handler
@@ -185,6 +217,12 @@ namespace ZeymerZoneUWP
         }
 
         //lokal filer
+        /// <summary>
+        /// Metode til at gemme data lokalt
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="filnavn"></param>
+        /// <returns></returns>
         public static async Task GemDataDisk(T data, string filnavn)
         {
             string jsonText = JsonConvert.SerializeObject(data);
@@ -193,6 +231,11 @@ namespace ZeymerZoneUWP
 
             await FileIO.WriteTextAsync(file, jsonText);
         }
+        /// <summary>
+        /// Metode til at hente data lokalt
+        /// </summary>
+        /// <param name="filnavn"></param>
+        /// <returns></returns>
         public static async Task<T> HentDataDisk(string filnavn)
         {
             StorageFolder localfolder = ApplicationData.Current.LocalFolder;
@@ -201,6 +244,10 @@ namespace ZeymerZoneUWP
             T tempData = JsonConvert.DeserializeObject<T>(jsonText);
             return tempData;
         }
+        /// <summary>
+        /// Metode til at lave fil lokalt til at gemme på/hente fra
+        /// </summary>
+        /// <param name="filNavn"></param>
         public static async void Makefile(string filNavn)
         {
             StorageFolder localfolder = ApplicationData.Current.LocalFolder;
