@@ -56,20 +56,19 @@ namespace ZeymerZoneUWP
         }
 
         /// <summary>
-        /// En metode til at sætte den nuværende kundes kostplaner.
+        /// En metode til at hente alle kostplaner.
         /// </summary>
         public async void SetKostplan()
         {
-
-            Kostplaner = await PersistencyService<ICollection<Kostplan>>.HentData("kostplans");
-            
-
+            Kostplaner = await PersistencyService<ICollection<Kostplan>>.HentData("kostplans");          
         }
 
         public ICollection<Kostplan> Kostplaner { get; set; }
 
         #region SetKostplanDays
-
+        /// <summary>
+        /// Metoder til at hente kostplaner til nuværende kunde
+        /// </summary>
         public void SetKostplanAllDays()
         {
             OC_Kostplaner.Clear();
@@ -81,7 +80,10 @@ namespace ZeymerZoneUWP
                 }
             }
         }
-
+        /// <summary>
+        /// Metode til at hente kostplaner fra specifik dag
+        /// </summary>
+        /// <param name="day"></param>
         public void SetKostplanDay(string day)
         {
             OC_Kostplaner.Clear();
@@ -96,7 +98,10 @@ namespace ZeymerZoneUWP
             }
         }
 
-        
+        /// <summary>
+        /// TIL ALLE METODER NEDAD:
+        /// Henter kostplaner fra specifik ugedag
+        /// </summary>
         public void SetKostplanMonday()
         {
             SetKostplanDay("Mandag");
