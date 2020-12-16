@@ -24,7 +24,7 @@ namespace ZeymerZoneUWP
             _tempKunde = new Kunde();
             _navigationService = new NavigationService();
             SetCurrent();
-            LoginKnap = new RelayCommand(Setkunde);// instantiere relaycommands
+            LoginKnap = new RelayCommand(Setkunde);// instantierer relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
             SletKnap = new RelayCommand(SletKunde);
             OpdaterKnap = new RelayCommand(OpdaterKundeAsync);
@@ -127,7 +127,7 @@ namespace ZeymerZoneUWP
             }
             else if (TempKunde.Password == null)
             {
-                Status = "Password must be different to null";
+                Status = "Hovsa. Du SKAL lave et password";
             }
             else
             {

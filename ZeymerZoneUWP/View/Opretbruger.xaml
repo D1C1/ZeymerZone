@@ -15,16 +15,16 @@
             <Button Content="Opret bruger" Margin="225,0,0,0" Click="Button_Click_1" ToolTipService.ToolTip="Gå til opret ny bruger"/>
         </Grid>
         <Grid Margin="0,0,0,78">
-            <StackPanel Margin="0,40,0,0">
-                <TextBox PlaceholderText="Navn" Text="{x:Bind BrugerVM.TempKunde.Kunde_navn, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Telefon" Text="{x:Bind BrugerVM.TempKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Email" Text="{x:Bind BrugerVM.TempKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
-                <TextBox PlaceholderText="Password" Text="{x:Bind BrugerVM.TempKunde.Password, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Gentag Password" Text="{x:Bind BrugerVM.RepeatPassword, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.TempKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.TempKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.TempKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.TempKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
+            <StackPanel Margin="10,40,10,0">
+                <TextBox Header="Navn" PlaceholderText="Navn" Text="{x:Bind BrugerVM.TempKunde.Kunde_navn, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox Header="Telefonnummer" PlaceholderText="Telefonnummer" Text="{x:Bind BrugerVM.TempKunde.Kunde_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox Header="Email" PlaceholderText="Email" Text="{x:Bind BrugerVM.TempKunde.Kunde_email, Mode=TwoWay}" TextWrapping="Wrap" />
+                <TextBox Header="Password" PlaceholderText="Password" Text="{x:Bind BrugerVM.TempKunde.Password, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Gentag Password" PlaceholderText="Gentag Password" Text="{x:Bind BrugerVM.RepeatPassword, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Vejnavn" PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.TempKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Postnummer" PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.TempKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Vægt i kg" PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.TempKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Højde i cm" PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.TempKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <DatePicker Date="{x:Bind BrugerVM.FoedselsdagOffset, Mode=TwoWay}" Header="Fødselsdag" Width="430"/>
                 <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}" ToolTipService.ToolTip="Opretter kunde på database"/>
                 <TextBox IsReadOnly="True" Text="{x:Bind BrugerVM.Status, Mode=TwoWay}" TextWrapping="Wrap"/>
