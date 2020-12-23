@@ -34,6 +34,8 @@ namespace ZeymerZoneUWP
             set { newLog = value; }
         }
 
+        
+
         /// <summary>
         /// Metoder som gemmer kundens log på databasen
         /// </summary>
