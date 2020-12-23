@@ -83,6 +83,9 @@ namespace ZeymerZoneUWP
         #endregion
 
 
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
