@@ -25,10 +25,10 @@
         <StackPanel DataContext="{Binding SelectedItem, ElementName=KundeLogs}">
             <TextBox TextWrapping="Wrap" IsReadOnly="True" PlaceholderText="Din Log" Text="{Binding Log1}" Margin="226,384,0,223" Height="121"></TextBox>
         </StackPanel>
-        <Button Content="Get logs from date" Command="{x:Bind LogVM.ShowLogsKnap, Mode=OneWay}" Height="32" Width="169" Margin="0,555,0,0" VerticalAlignment="Top" ></Button>
+        <Button Content="Get logs from date" Command="{x:Bind LogVM.ShowLogsKnap, Mode=OneWay}" Height="31" Width="169" Margin="0,555,0,0" VerticalAlignment="Top" ></Button>
         <Button ToolTipService.ToolTip="Gå til opret log siden" Content="Opret log" Margin="0,436,0,0" VerticalAlignment="Top" Height="31" Width="169" Click="Button_Click_4"></Button>
         <DatePicker Header="Sort date" x:Name="selectDate" Date="{x:Bind LogVM.CompareDate, Mode=TwoWay}" Margin="0,495,0,0" VerticalAlignment="Top"/>
-        <Button ToolTipService.ToolTip="Vis alle dine logs på databasen" Content="Vis alle logs" Command="{x:Bind LogVM.ShowAllLogsKnap}" Margin="0,384,0,0" VerticalAlignment="Top" Height="34" Width="177"></Button>
+        <Button ToolTipService.ToolTip="Vis alle dine logs på databasen" Content="Vis alle logs" Command="{x:Bind LogVM.ShowAllLogsKnap}" Margin="0,384,0,0" VerticalAlignment="Top" Height="31" Width="169"></Button>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <Button Content="Home" Margin="10,0,0,0" Click="Button_Click_3" ToolTipService.ToolTip="Gå til startside"/>
             <Button Content="Profil" Margin="82,0,0,0" Click="Button_Click" ToolTipService.ToolTip="Gå til din profilside"/>
