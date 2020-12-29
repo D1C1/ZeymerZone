@@ -22,7 +22,7 @@
             </ListView>
         </StackPanel>
         <StackPanel DataContext="{Binding SelectedItem, ElementName=KostplanList}">
-            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Link}" Margin="226,384,0,223"></TextBox>
+            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Link}" Margin="226,384,12,223"></TextBox>
         </StackPanel>
         <Button Content="Man" Margin="10,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Monday, Mode=OneWay}"/>
         <Button Content="Tir" Margin="70,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Tuesday, Mode=OneWay}"/>

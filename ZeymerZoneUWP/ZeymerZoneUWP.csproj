@@ -191,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Resources\Commonstyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\VejlederValgt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
