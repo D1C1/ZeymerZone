@@ -4,7 +4,10 @@
     xmlns:local="using:ZeymerZoneUWP">
 
 
-    <Style TargetType="Button"></Style>
+    <Style x:Key="TaskbarButton" TargetType="Button">
+        
+        
+    </Style>
     
     
 </ResourceDictionary>
