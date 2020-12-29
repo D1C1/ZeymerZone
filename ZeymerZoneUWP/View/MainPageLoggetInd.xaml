@@ -20,7 +20,7 @@
             <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Margin="0,36,0,0" 
                        Text="Welcome to the ZeymerZone" TextWrapping="Wrap" VerticalAlignment="Top" 
                        Height="64" Width="149" FontSize="20"/>
-            <Button Click="Button_Click_5" Margin="142,0,0,0" Height="104" Width="139">
+            <Button Click="Button_Click_5" Height="104" Width="139" HorizontalAlignment="Center">
                 <TextBlock Text="Log Ud" Height="36" Width="113" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
             </Button>
         </Grid>
