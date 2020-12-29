@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
+        <Grid Margin="0,690,0,0" Height="78" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <Button Content="Home" Margin="70,0,0,0" Click="Button_Click_2" ToolTipService.ToolTip="Gå til startside"/>
-            <Button Content="Login" Click="Button_Click" ToolTipService.ToolTip="Gå til login side" Margin="304,0,0,0"/>
+            <Button Content="Login" Click="Button_Click" ToolTipService.ToolTip="Gå til login side" Margin="0,0,70,0" HorizontalAlignment="Right"/>
             <Button Content="Opret bruger" Click="Button_Click_1" ToolTipService.ToolTip="Gå til opret ny bruger" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Margin="0,0,0,78">
