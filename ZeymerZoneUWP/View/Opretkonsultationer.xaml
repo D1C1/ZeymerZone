@@ -9,13 +9,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid Margin="0,0,126,632">
-            <TextBlock>Opret n Konsultation</TextBlock>
-            <DatePicker Date="{x:Bind VejlederVM.NewKonDateDate, Mode=TwoWay}" x:Name="MyDatePicker" MinYear="{Binding MinYear}" MaxYear="{Binding MaxYear}" />
-            <TimePicker Time="{x:Bind VejlederVM.NewKonDateTime, Mode=TwoWay}" Margin="0,83,0,0" VerticalAlignment="Top" Width="296"/>
+        <Grid Margin="0,0,6,546">
+            <TextBlock Margin="0,0,290,193">Opret n Konsultation</TextBlock>
+            <DatePicker Date="{x:Bind VejlederVM.NewKonDateDate, Mode=TwoWay}" x:Name="MyDatePicker" MinYear="{Binding MinYear}" MaxYear="{Binding MaxYear}" Margin="0,68,0,0" VerticalAlignment="Top" />
+            <StackPanel Margin="0,103,130,0">
+                <TextBox PlaceholderText="Timer" Text="{x:Bind VejlederVM.Timer, Mode=TwoWay}"/>
+                <TextBox PlaceholderText="Minutter" Text="{x:Bind VejlederVM.Minutter, Mode=TwoWay}"/>
+            </StackPanel>
+
         </Grid>
-        <StackPanel Margin="0,197,0,0">
-            <ListView ItemsSource="{x:Bind Path=VejlederVM.OC_Konsultationer}">
+        <StackPanel Margin="0,402,6,10">
+            <ListView ItemsSource="{x:Bind Path=VejlederVM.OC_Konsultationer}" Height="340">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Konsultation">
                         <StackPanel Orientation="Horizontal">
@@ -27,8 +31,8 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <Button ToolTipService.ToolTip="Klik her for at få vist Konsultationer" Content="Konsultationer" Height="32" Width="140" Command="{x:Bind VejlederVM.KonsultationKnap, Mode=OneWay}" Margin="0,591,0,0" VerticalAlignment="Top"/>
+        <Button ToolTipService.ToolTip="Klik her for at få vist Konsultationer" Content="Konsultationer" Height="32" Width="140" Command="{x:Bind VejlederVM.KonsultationKnap, Mode=OneWay}" Margin="286,352,0,0" VerticalAlignment="Top"/>
         <Button Content="Tilbage" Margin="362,10,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Opret" Margin="0,136,0,0" VerticalAlignment="Top" Command="{x:Bind VejlederVM.OpretKonsultation, Mode=OneWay}"/>
+        <Button Content="Opret" Margin="0,222,0,0" VerticalAlignment="Top" Command="{x:Bind VejlederVM.OpretKonsultation, Mode=OneWay}"/>
     </Grid>
 </Page>

@@ -38,8 +38,9 @@ namespace ZeymerZoneUWP
         public RelayCommand KonsultationKnap { get; set; }
         public Konsultation NewKonsultation { get; set; } = new Konsultation();
         public RelayCommand OpretKonsultation { get; set; }
-        public DateTimeOffset NewKonDateDate { get; set; }
-        public TimeSpan NewKonDateTime { get; set; } = new TimeSpan();
+        public DateTimeOffset NewKonDateDate { get; set; } = new DateTimeOffset();
+        public string Timer { get; set; }
+        public string Minutter { get; set; }
 
 
         public Kunde NewKunde
@@ -127,12 +128,10 @@ namespace ZeymerZoneUWP
         }
 
         public void GemKonsultation()
-        {
-            NewKonDateDate.Date.Add(NewKonDateTime);
+        {      
             NewKonsultation.Kunde_Id = NewKunde.Kunde_Id;
             NewKonsultation.Vejleder_Id = CurrentVejleder.Vejleder_Id;
-            NewKonsultation.Konsultation_date = NewKonDateDate.DateTime;
-            NewKonsultation.Konsultation_date = NewKonsultation.Konsultation_date.Date.Add(NewKonDateTime);
+            NewKonsultation.Konsultation_date = NewKonDateDate.ToString("MM/dd/yyyy") + $" {Timer}:{Minutter}";
             PersistencyService<Konsultation>.GemData("konsultations", NewKonsultation);
         }
 

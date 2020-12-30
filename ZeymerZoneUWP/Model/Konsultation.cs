@@ -15,8 +15,7 @@ namespace ZeymerZoneUWP
 
         public int Kunde_Id { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime Konsultation_date { get; set; }
+        public string Konsultation_date { get; set; }
 
         public virtual Kunde Kunde { get; set; }
 
