@@ -13,13 +13,18 @@ namespace ZeymerZoneUWP
     public class VejlederViewModel : INotifyPropertyChanged
     {
         public static Vejleder _currentVejleder;
-        private Kunde _newKunde;
+        public static Kunde _newKunde;
+        private Log _selectedLog;
+        
 
         public VejlederViewModel()
         {            
             SetVejleder();
             SetKunder();
             LoadLogKnap = new RelayCommand(SetLogs);
+            KonsultationKnap = new RelayCommand(SetKonsultationer);
+            OpretKonsultation = new RelayCommand(GemKonsultation);
+            
         }
         public ObservableCollection<Vejleder> OC_Vejledere { get; set; } = new ObservableCollection<Vejleder>();
         public ICollection<Vejleder> Vejledere { get; set; }
@@ -28,6 +33,13 @@ namespace ZeymerZoneUWP
         public ObservableCollection<Log> OC_Logs { get; set; } = new ObservableCollection<Log>();
         public ICollection<Log> Logs { get; set; }
         public RelayCommand LoadLogKnap { get; set; }
+        public ICollection<Konsultation> Konsultationer { get; set; }
+        public ObservableCollection<Konsultation> OC_Konsultationer { get; set; } = new ObservableCollection<Konsultation>();
+        public RelayCommand KonsultationKnap { get; set; }
+        public Konsultation NewKonsultation { get; set; } = new Konsultation();
+        public RelayCommand OpretKonsultation { get; set; }
+        public DateTimeOffset NewKonDateDate { get; set; }
+        public TimeSpan NewKonDateTime { get; set; } = new TimeSpan();
 
 
         public Kunde NewKunde
@@ -43,8 +55,7 @@ namespace ZeymerZoneUWP
             
         }
 
-
-        private Log _selectedLog;
+      
 
         public Log SelectedLog
         {
@@ -81,7 +92,7 @@ namespace ZeymerZoneUWP
             foreach (var item in Kunder)
             {                      
                 OC_Kunder.Add(item);
-            }                         
+            }           
         }
 
         /// <summary>
@@ -90,7 +101,7 @@ namespace ZeymerZoneUWP
         public async void SetLogs()
         {
             Logs = await PersistencyService<ICollection<Log>>.HentData("logs");
-            OC_Logs.Clear();
+            OC_Logs.Clear();          
             foreach (var item in Logs)
             {
                 if(NewKunde.Kunde_Id == item.Kunde_Id)
@@ -100,6 +111,42 @@ namespace ZeymerZoneUWP
             }
         }
 
+        #region Konsultationer
+
+        public async void SetKonsultationer()
+        {
+            Konsultationer = await PersistencyService<ICollection<Konsultation>>.HentData("konsultations");
+            OC_Konsultationer.Clear();
+            foreach (var item in Konsultationer)
+            {
+                if (NewKunde.Kunde_Id == item.Kunde_Id)
+                {
+                    OC_Konsultationer.Add(item);
+                }
+            }
+        }
+
+        public void GemKonsultation()
+        {
+            NewKonDateDate.Date.Add(NewKonDateTime);
+            NewKonsultation.Kunde_Id = NewKunde.Kunde_Id;
+            NewKonsultation.Vejleder_Id = CurrentVejleder.Vejleder_Id;
+            NewKonsultation.Konsultation_date = NewKonDateDate.DateTime;
+            NewKonsultation.Konsultation_date = NewKonsultation.Konsultation_date.Date.Add(NewKonDateTime);
+            PersistencyService<Konsultation>.GemData("konsultations", NewKonsultation);
+        }
+
+        public DateTimeOffset MinYear
+        {
+            get { return DateTime.Now; }
+        }
+
+        public DateTimeOffset MaxYear
+        {
+            get { return DateTime.Now.AddYears(2); }
+        }
+
+        #endregion
 
 
 
