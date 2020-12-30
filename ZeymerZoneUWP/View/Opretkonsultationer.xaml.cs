@@ -21,36 +21,17 @@ namespace ZeymerZoneUWP
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class Opretkonsultationer : Page
-    {
-        public KonsultationViewModel KonsultationVM { get; set; }
+    {    
+        public VejlederViewModel VejlederVM { get; set; }
         public Opretkonsultationer()
         {
-            KonsultationVM = new KonsultationViewModel();
+            VejlederVM = new VejlederViewModel();
             this.InitializeComponent();
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Profilside));
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(BrugerKostplan));
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(BrugerLogs));
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPageLoggetInd));
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(BrugerKonsultationer));
+            this.Frame.Navigate(typeof(VejlederValgt));
         }
     }
 }
