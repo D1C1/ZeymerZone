@@ -25,13 +25,16 @@ namespace ZeymerZoneUWP
             LoadLogKnap = new RelayCommand(SetLogs);
             KonsultationKnap = new RelayCommand(SetKonsultationer);
             OpretKonsultation = new RelayCommand(GemKonsultation);
-            
+            tomKnap = new RelayCommand(tom, CanClick);
+
         }
+        #region Properties
         public ObservableCollection<Vejleder> OC_Vejledere { get; set; } = new ObservableCollection<Vejleder>();
         public ICollection<Vejleder> Vejledere { get; set; }
         public ObservableCollection<Kunde> OC_Kunder { get; set; } = new ObservableCollection<Kunde>();
         public ICollection<Kunde> Kunder { get; set; }
         public ObservableCollection<Log> OC_Logs { get; set; } = new ObservableCollection<Log>();
+        public bool kundeSat { get; set; } = false;
         public ICollection<Log> Logs { get; set; }
         public RelayCommand LoadLogKnap { get; set; }
         public ICollection<Konsultation> Konsultationer { get; set; }
@@ -39,10 +42,10 @@ namespace ZeymerZoneUWP
         public RelayCommand KonsultationKnap { get; set; }
         public Konsultation NewKonsultation { get; set; } = new Konsultation();
         public RelayCommand OpretKonsultation { get; set; }
+        public RelayCommand tomKnap { get; set; }
         public DateTimeOffset NewKonDateDate { get; set; } = new DateTimeOffset(DateTime.Now);
         public string Timer { get; set; }
         public string Minutter { get; set; }
-
 
         public Kunde NewKunde
         {
@@ -50,14 +53,11 @@ namespace ZeymerZoneUWP
             set { _newKunde = value; }
         }
        
-
         public string KundesWeight
         {
             get { return $"Vægt: {SelectedLog.Kunde_vaegt_dd}"; }
             
         }
-
-      
 
         public Log SelectedLog
         {
@@ -65,13 +65,14 @@ namespace ZeymerZoneUWP
             set { _selectedLog = value; }
         }
 
-
-
         public Vejleder CurrentVejleder
         {
             get { return _currentVejleder; }
             set { _currentVejleder = value; }
         }
+        #endregion
+
+        #region Methods
         
         /// <summary>
         /// Henter alle vejledere til OC
@@ -102,6 +103,8 @@ namespace ZeymerZoneUWP
         /// </summary>
         public async void SetLogs()
         {
+            kundeSat = true;
+            tomKnap.RaiseCanExecuteChanged();
             Logs = await PersistencyService<ICollection<Log>>.HentData("logs");
             OC_Logs.Clear();          
             foreach (var item in Logs)
@@ -112,7 +115,13 @@ namespace ZeymerZoneUWP
                 }
             }
         }
+        public void tom()
+        {
 
+        }
+        private bool CanClick() { return kundeSat; }
+            
+        #endregion
         #region Konsultationer
 
         public async void SetKonsultationer()
@@ -136,7 +145,6 @@ namespace ZeymerZoneUWP
             PersistencyService<Konsultation>.GemData("konsultations", NewKonsultation);
         }
 
-        
 
         #endregion
 
