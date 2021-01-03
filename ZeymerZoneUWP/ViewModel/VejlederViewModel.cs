@@ -16,10 +16,10 @@ namespace ZeymerZoneUWP
         public static Vejleder _currentVejleder;
         public static Kunde _newKunde;
         private Log _selectedLog;
-        
+
 
         public VejlederViewModel()
-        {            
+        {
             SetVejleder();
             SetKunder();
             LoadLogKnap = new RelayCommand(SetLogs);
@@ -34,7 +34,6 @@ namespace ZeymerZoneUWP
         public ObservableCollection<Kunde> OC_Kunder { get; set; } = new ObservableCollection<Kunde>();
         public ICollection<Kunde> Kunder { get; set; }
         public ObservableCollection<Log> OC_Logs { get; set; } = new ObservableCollection<Log>();
-        public bool kundeSat { get; set; } = false;
         public ICollection<Log> Logs { get; set; }
         public RelayCommand LoadLogKnap { get; set; }
         public ICollection<Konsultation> Konsultationer { get; set; }
@@ -46,25 +45,25 @@ namespace ZeymerZoneUWP
         public DateTimeOffset NewKonDateDate { get; set; } = new DateTimeOffset(DateTime.Now);
         public string Timer { get; set; }
         public string Minutter { get; set; }
-
         public Kunde NewKunde
         {
             get { return _newKunde; }
-            set { _newKunde = value; }
+            set
+            {
+                _newKunde = value;
+                tomKnap.RaiseCanExecuteChanged();
+            }
         }
-       
         public string KundesWeight
         {
             get { return $"Vægt: {SelectedLog.Kunde_vaegt_dd}"; }
-            
-        }
 
+        }
         public Log SelectedLog
         {
             get { return _selectedLog; }
             set { _selectedLog = value; }
         }
-
         public Vejleder CurrentVejleder
         {
             get { return _currentVejleder; }
@@ -73,7 +72,7 @@ namespace ZeymerZoneUWP
         #endregion
 
         #region Methods
-        
+
         /// <summary>
         /// Henter alle vejledere til OC
         /// </summary>
@@ -93,9 +92,9 @@ namespace ZeymerZoneUWP
         {
             Kunder = await PersistencyService<ICollection<Kunde>>.HentData("kundes");
             foreach (var item in Kunder)
-            {                      
+            {
                 OC_Kunder.Add(item);
-            }           
+            }
         }
 
         /// <summary>
@@ -103,24 +102,28 @@ namespace ZeymerZoneUWP
         /// </summary>
         public async void SetLogs()
         {
-            kundeSat = true;
-            tomKnap.RaiseCanExecuteChanged();
-            Logs = await PersistencyService<ICollection<Log>>.HentData("logs");
-            OC_Logs.Clear();          
-            foreach (var item in Logs)
+            try
             {
-                if(NewKunde.Kunde_Id == item.Kunde_Id)
+                Logs = await PersistencyService<ICollection<Log>>.HentData("logs");
+                OC_Logs.Clear();
+                foreach (var item in Logs)
                 {
-                    OC_Logs.Add(item);
+                    if (NewKunde.Kunde_Id == item.Kunde_Id)
+                    {
+                        OC_Logs.Add(item);
+                    }
                 }
+            }
+            catch (NullReferenceException)
+            {
             }
         }
         public void tom()
         {
 
         }
-        private bool CanClick() { return kundeSat; }
-            
+        private bool CanClick() { return NewKunde != null; }
+
         #endregion
         #region Konsultationer
 
@@ -138,7 +141,7 @@ namespace ZeymerZoneUWP
         }
 
         public void GemKonsultation()
-        {      
+        {
             NewKonsultation.Kunde_Id = NewKunde.Kunde_Id;
             NewKonsultation.Vejleder_Id = CurrentVejleder.Vejleder_Id;
             NewKonsultation.Konsultation_date = NewKonDateDate.ToString("MM/dd/yyyy") + $" {Timer}:{Minutter}";
