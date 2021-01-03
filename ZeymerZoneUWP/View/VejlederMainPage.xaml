@@ -28,7 +28,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <HyperlinkButton Content="BrugerMainPage" Margin="323,10,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
+        <HyperlinkButton Content="BrugerMainPage" HorizontalAlignment="Right" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
         <Button Content="Vælg" Margin="27,399,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
