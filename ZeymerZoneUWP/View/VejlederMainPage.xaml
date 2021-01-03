@@ -10,11 +10,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-    <muxc:InfoBar
+        <muxc:InfoBar
     IsOpen="True"
     Severity="Warning"
     Title="Advarsel"
-    Message="Dette view er ikke færdigt. Nogle funktioner virker måske ikke. Husk at vælge en vejleder, før du fortsætter på vælg knappen." />
+    Message="Dette view er ikke færdigt. Nogle funktioner virker måske ikke. Husk at vælge en vejleder, før du fortsætter på vælg knappen." Margin="0,0,0,675" />
         <StackPanel Margin="0,93,0,403">
             <ListView SelectedItem="{x:Bind VejlederVM.CurrentVejleder, Mode=TwoWay}" ItemsSource="{x:Bind VejlederVM.OC_Vejledere}" x:Name="VejlederList" Header="Vælg dig selv">
                 <ListView.ItemTemplate>
@@ -30,6 +30,10 @@
         </StackPanel>
         <HyperlinkButton Content="BrugerMainPage" HorizontalAlignment="Right" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
         <Button Content="Vælg" Margin="27,399,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="27,540,0,0" PlaceholderText="Navn" Text="{x:Bind VejlederVM.NewVejleder.Vejleder_navn, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="27,588,0,0" PlaceholderText="Email" Text="{x:Bind VejlederVM.NewVejleder.Vejleder_email, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="27,643,0,0" PlaceholderText="Telefon" Text="{x:Bind VejlederVM.NewVejleder.Vejleder_tlfnr, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Command="{x:Bind VejlederVM.GemVejlederKnap}" Content="Opret vejleder" Margin="31,690,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

@@ -26,9 +26,11 @@ namespace ZeymerZoneUWP
             KonsultationKnap = new RelayCommand(SetKonsultationer);
             OpretKonsultation = new RelayCommand(GemKonsultation);
             tomKnap = new RelayCommand(tom, CanClick);
+            GemVejlederKnap = new RelayCommand(GemVejleder);
 
         }
         #region Properties
+        public RelayCommand GemVejlederKnap { get; set; }
         public ObservableCollection<Vejleder> OC_Vejledere { get; set; } = new ObservableCollection<Vejleder>();
         public ICollection<Vejleder> Vejledere { get; set; }
         public ObservableCollection<Kunde> OC_Kunder { get; set; } = new ObservableCollection<Kunde>();
@@ -54,6 +56,7 @@ namespace ZeymerZoneUWP
                 tomKnap.RaiseCanExecuteChanged();
             }
         }
+        public Vejleder NewVejleder { get; set; } = new Vejleder();
         public string KundesWeight
         {
             get { return $"Vægt: {SelectedLog.Kunde_vaegt_dd}"; }
@@ -72,12 +75,18 @@ namespace ZeymerZoneUWP
         #endregion
 
         #region Methods
-
+        public void GemVejleder()
+        {
+            PersistencyService<Vejleder>.GemData("vejleders", NewVejleder);
+            SetVejleder();
+            NewVejleder = null;
+        }
         /// <summary>
         /// Henter alle vejledere til OC
         /// </summary>
         public async void SetVejleder()
         {
+            OC_Vejledere.Clear();
             Vejledere = await PersistencyService<ICollection<Vejleder>>.HentData("vejleders");
             foreach (var item in Vejledere)
             {
