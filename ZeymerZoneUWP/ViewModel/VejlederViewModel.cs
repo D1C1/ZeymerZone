@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace ZeymerZoneUWP
 {
@@ -38,7 +39,7 @@ namespace ZeymerZoneUWP
         public RelayCommand KonsultationKnap { get; set; }
         public Konsultation NewKonsultation { get; set; } = new Konsultation();
         public RelayCommand OpretKonsultation { get; set; }
-        public DateTimeOffset NewKonDateDate { get; set; } = new DateTimeOffset();
+        public DateTimeOffset NewKonDateDate { get; set; } = new DateTimeOffset(DateTime.Now);
         public string Timer { get; set; }
         public string Minutter { get; set; }
 
@@ -135,15 +136,7 @@ namespace ZeymerZoneUWP
             PersistencyService<Konsultation>.GemData("konsultations", NewKonsultation);
         }
 
-        public DateTimeOffset MinYear
-        {
-            get { return DateTimeOffset.Now; }
-        }
-
-        public DateTimeOffset MaxYear
-        {
-            get { return DateTimeOffset.Now.AddYears(2); }
-        }
+        
 
         #endregion
 

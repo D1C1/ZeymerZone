@@ -11,7 +11,7 @@
     <Grid>
         <Grid Margin="0,0,6,546">
             <TextBlock Margin="0,0,290,193">Opret n Konsultation</TextBlock>
-            <DatePicker Date="{x:Bind VejlederVM.NewKonDateDate, Mode=TwoWay}" x:Name="MyDatePicker" MinYear="{Binding MinYear}" MaxYear="{Binding MaxYear}" Margin="0,68,0,0" VerticalAlignment="Top" />
+            <DatePicker Date="{x:Bind VejlederVM.NewKonDateDate, Mode=TwoWay}" x:Name="MyDatePicker" Margin="0,68,0,0" VerticalAlignment="Top" />
             <StackPanel Margin="0,103,130,0">
                 <TextBox PlaceholderText="Timer" Text="{x:Bind VejlederVM.Timer, Mode=TwoWay}"/>
                 <TextBox PlaceholderText="Minutter" Text="{x:Bind VejlederVM.Minutter, Mode=TwoWay}"/>
