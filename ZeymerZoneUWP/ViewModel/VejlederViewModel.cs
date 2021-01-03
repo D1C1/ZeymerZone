@@ -137,12 +137,12 @@ namespace ZeymerZoneUWP
 
         public DateTimeOffset MinYear
         {
-            get { return DateTime.Now; }
+            get { return DateTimeOffset.Now; }
         }
 
         public DateTimeOffset MaxYear
         {
-            get { return DateTime.Now.AddYears(2); }
+            get { return DateTimeOffset.Now.AddYears(2); }
         }
 
         #endregion
