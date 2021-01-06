@@ -30,12 +30,14 @@
         <DatePicker Header="Sortér logs efter dato" x:Name="selectDate" Date="{x:Bind LogVM.CompareDate, Mode=TwoWay}" Margin="0,495,0,0" VerticalAlignment="Top"/>
         <Button ToolTipService.ToolTip="Vis alle dine logs på databasen" Content="Vis alle logs" Command="{x:Bind LogVM.ShowAllLogsKnap}" Margin="0,384,0,0" VerticalAlignment="Top" Height="31" Width="169"></Button>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
-            <Button Content="Home" Margin="10,0,0,0" Click="Button_Click_3" ToolTipService.ToolTip="Gå til startside"/>
-            <Button Content="Profil" Margin="82,0,0,0" Click="Button_Click" ToolTipService.ToolTip="Gå til din profilside"/>
-            <Button Content="Kostplan" Click="Button_Click_1" Margin="155,0,0,0" ToolTipService.ToolTip="Gå til dine kostplaner"/>
-            <Button Content="Log" Margin="245,0,0,0" Click="Button_Click_2" ToolTipService.ToolTip="Opret og se nye logs"/>
-            <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
-            <Button Content="Log Ud" Margin="0,0,12,0" Click="Button_Click_logud" ToolTipService.ToolTip="Her logger du ud" HorizontalAlignment="Right"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_3" ToolTipService.ToolTip="Gå til startside"/>
+                <Button Content="Profil" Margin="8" Click="Button_Click" ToolTipService.ToolTip="Gå til din profilside"/>
+                <Button Content="Kostplan" Click="Button_Click_1" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
+                <Button Content="Log" Margin="8" Click="Button_Click_2" ToolTipService.ToolTip="Opret og se nye logs"/>
+                <Button Content="Konsultationer" Margin="8" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
+                <Button Content="Log Ud" Margin="8" Click="Button_Click_logud" ToolTipService.ToolTip="Her logger du ud"/>
+            </StackPanel>
         </Grid>
 
     </Grid>
