@@ -48,7 +48,7 @@ namespace ZeymerZoneUWP
             PersistencyService<Log>.GemData("logs", NewLog);
         }
 
-        public DateTimeOffset CompareDate { get; set; }
+        public DateTimeOffset CompareDate { get; set; } = new DateTimeOffset(DateTime.Now);
 
         public ObservableCollection<Log> OC_KundeLogs { get; set; } = new ObservableCollection<Log>();
         public ICollection<Log> KundeLogs { get; set; }

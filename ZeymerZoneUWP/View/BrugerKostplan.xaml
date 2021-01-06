@@ -9,8 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel Margin="0,0,0,235">
-            <ListView SelectedItem="{x:Bind KostplanVM.SelectedKostplan, Mode=TwoWay}" x:Name="KostplanList" ItemsSource="{x:Bind KostplanVM.OC_Kostplaner}" Height="203">
+        <StackPanel Margin="0,0,0,450">
+            <ListView SelectedItem="{x:Bind KostplanVM.SelectedKostplan, Mode=TwoWay}" x:Name="KostplanList" ItemsSource="{x:Bind KostplanVM.OC_Kostplaner}" Height="317">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Kostplan">
                         <StackPanel Orientation="Horizontal">
@@ -21,8 +21,9 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <StackPanel DataContext="{Binding SelectedItem, ElementName=KostplanList}">
-            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Link}" Margin="226,384,12,223"></TextBox>
+        <TextBlock Margin="155,389,247,354" Height="25" Width="30" RenderTransformOrigin="0.52,0.52">Link:</TextBlock>
+        <StackPanel DataContext="{Binding SelectedItem, ElementName=KostplanList}" Margin="224,384,80,344">
+            <TextBox PlaceholderText="Link til opskrift" Text="{Binding Link}" Height="34"></TextBox>
         </StackPanel>
         <Button Content="Man" Margin="10,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Monday, Mode=OneWay}"/>
         <Button Content="Tir" Margin="70,0,0,60" Height="30" Width="50" Command="{x:Bind Path=KostplanVM.Tuesday, Mode=OneWay}"/>
