@@ -26,16 +26,16 @@
             <TextBox TextWrapping="Wrap" IsReadOnly="True" PlaceholderText="Din Log" Text="{Binding Log1}" Margin="226,384,0,223" Height="121"></TextBox>
         </StackPanel>
         <Button Content="Hent logs fra dato" Command="{x:Bind LogVM.ShowLogsKnap, Mode=OneWay}" Height="31" Width="169" Margin="0,555,0,0" VerticalAlignment="Top" ></Button>
-        <Button ToolTipService.ToolTip="Gå til opret log siden" Content="Opret log" Margin="0,436,0,0" VerticalAlignment="Top" Height="31" Width="169" Click="Button_Click_4"></Button>
+        <Button ToolTipService.ToolTip="Gå til opret log siden" Content="Opret log" Margin="0,436,0,0" VerticalAlignment="Top" Height="31" Width="169" Click="Button_Click_OpretLog"></Button>
         <DatePicker Header="Sortér logs efter dato" x:Name="selectDate" Date="{x:Bind LogVM.CompareDate, Mode=TwoWay}" Margin="0,495,0,0" VerticalAlignment="Top"/>
         <Button ToolTipService.ToolTip="Vis alle dine logs på databasen" Content="Vis alle logs" Command="{x:Bind LogVM.ShowAllLogsKnap}" Margin="0,384,0,0" VerticalAlignment="Top" Height="31" Width="169"></Button>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_3" ToolTipService.ToolTip="Gå til startside"/>
-                <Button Content="Profil" Margin="8" Click="Button_Click" ToolTipService.ToolTip="Gå til din profilside"/>
-                <Button Content="Kostplan" Click="Button_Click_1" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
-                <Button Content="Log" Margin="8" Click="Button_Click_2" ToolTipService.ToolTip="Opret og se nye logs"/>
-                <Button Content="Konsultationer" Margin="8" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
+                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_MainPageLoggetInd" ToolTipService.ToolTip="Gå til startside"/>
+                <Button Content="Profil" Margin="8" Click="Button_Click_Profil" ToolTipService.ToolTip="Gå til din profilside"/>
+                <Button Content="Kostplan" Click="Button_Click_BrugerKostplan" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
+                <Button Content="Log" Margin="8" Click="Button_Click_BrugerLogs" ToolTipService.ToolTip="Opret og se nye logs"/>
+                <Button Content="Konsultationer" Margin="8" Click="Button_Click_BrugerKonsultationer" ToolTipService.ToolTip="Se dine konsultations tider"/>
                 <Button Content="Log Ud" Margin="8" Click="Button_Click_logud" ToolTipService.ToolTip="Her logger du ud"/>
             </StackPanel>
         </Grid>

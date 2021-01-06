@@ -22,7 +22,7 @@
                 <TextBox Header="Password" PlaceholderText="Password" Text="{x:Bind BrugerVM.TempKunde.Password, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Gentag Password" PlaceholderText="Gentag Password" Text="{x:Bind BrugerVM.RepeatPassword, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox IsReadOnly="True" PlaceholderText="Password Status" Text="{x:Bind BrugerVM.Status, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBox Header="Vejnavn" PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.TempKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
+                <TextBox Header="Vejnavn og nr." PlaceholderText="Vejnavn" Text="{x:Bind BrugerVM.TempKunde.Kunde_vejNavn, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Postnummer" PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.TempKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Vægt i kg" PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.TempKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Højde i cm" PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.TempKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>

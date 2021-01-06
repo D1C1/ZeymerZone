@@ -28,32 +28,26 @@ namespace ZeymerZoneUWP
             BrugerVM = new BrugerViewModel();
             this.InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Profil(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Profilside));
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_BrugerKostplan(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BrugerKostplan));
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_BrugerLogs(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BrugerLogs));
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click_MainPageLoggetInd(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPageLoggetInd));
         }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-            
-        }
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        private void Button_Click_BrugerKonsultationer(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(BrugerKonsultationer));
         }

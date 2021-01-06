@@ -11,11 +11,11 @@
     <Grid>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_3" ToolTipService.ToolTip="Gå til startside"/>
-                <Button Content="Profil" Margin="8" Click="Button_Click" ToolTipService.ToolTip="Gå til din profilside"/>
-                <Button Content="Kostplan" Click="Button_Click_1" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
-                <Button Content="Log" Margin="8" Click="Button_Click_2" ToolTipService.ToolTip="Opret og se nye logs"/>
-                <Button Content="Konsultationer" Margin="8" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
+                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_MainPageLoggetInd" ToolTipService.ToolTip="Gå til startside"/>
+                <Button Content="Profil" Margin="8" Click="Button_Click_Profil" ToolTipService.ToolTip="Gå til din profilside"/>
+                <Button Content="Kostplan" Click="Button_Click_BrugerKostplan" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
+                <Button Content="Log" Margin="8" Click="Button_Click_BrugerLogs" ToolTipService.ToolTip="Opret og se nye logs"/>
+                <Button Content="Konsultationer" Margin="8" Click="Button_Click_BrugerKonsultationer" ToolTipService.ToolTip="Se dine konsultations tider"/>
                 <Button Content="Log Ud" Margin="8" Click="Button_Click_logud" ToolTipService.ToolTip="Her logger du ud"/>
             </StackPanel>
         </Grid>

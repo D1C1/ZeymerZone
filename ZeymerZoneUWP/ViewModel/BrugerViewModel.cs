@@ -20,8 +20,8 @@ namespace ZeymerZoneUWP
 
         public BrugerViewModel()
         {
-            _currentKunde = new Kunde();
-            _tempKunde = new Kunde();
+            //_currentKunde = new Kunde();
+            //_tempKunde = new Kunde();
             _navigationService = new NavigationService();
             SetCurrent();
             LoginKnap = new RelayCommand(Setkunde);// instantierer relaycommands
@@ -68,17 +68,15 @@ namespace ZeymerZoneUWP
         public string Username { get; set; }
         public string Password { get; set; }
         public string RepeatPassword { get; set; }
-        public DateTimeOffset FoedselsdagOffset { get; set; }
+        public DateTimeOffset FoedselsdagOffset { get; set; } = new DateTimeOffset(new DateTime(1980, 1, 1));
         public string FoedselsdagFormat
         {
             get
             {
-                if (CurrentKunde.Kunde_foedeselsdag.Date.ToString("dd MMMM yyyy") == null) return "error";
-                return $"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
-            }
-            set
-            {
-            }
+
+                return CurrentKunde.Kunde_foedeselsdag.ToString("dd mm yyyy");
+                    //$"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
+            }            
         }
         #endregion
 

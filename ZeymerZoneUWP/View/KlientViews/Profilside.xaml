@@ -11,11 +11,11 @@
     <Grid>
         <Grid Margin="0,695,0,0" Height="73" VerticalAlignment="Top" BorderBrush="White" BorderThickness="1">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_3" ToolTipService.ToolTip="Gå til startside"/>
-                <Button Content="Profil" Margin="8" Click="Button_Click" ToolTipService.ToolTip="Gå til din profilside"/>
-                <Button Content="Kostplan" Click="Button_Click_1" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
-                <Button Content="Log" Margin="8" Click="Button_Click_2" ToolTipService.ToolTip="Opret og se nye logs"/>
-                <Button Content="Konsultationer" Margin="8" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
+                <Button Content="Home" Margin="13,0,8,0" Click="Button_Click_MainPageLoggetInd" ToolTipService.ToolTip="Gå til startside"/>
+                <Button Content="Profil" Margin="8" Click="Button_Click_Profil" ToolTipService.ToolTip="Gå til din profilside"/>
+                <Button Content="Kostplan" Click="Button_Click_BrugerKostplan" Margin="8" ToolTipService.ToolTip="Gå til dine kostplaner"/>
+                <Button Content="Log" Margin="8" Click="Button_Click_BrugerLogs" ToolTipService.ToolTip="Opret og se nye logs"/>
+                <Button Content="Konsultationer" Margin="8" Click="Button_Click_BrugerKonsultationer" ToolTipService.ToolTip="Se dine konsultations tider"/>
                 <Button Content="Log Ud" Margin="8" Click="Button_Click_logud" ToolTipService.ToolTip="Her logger du ud"/>
             </StackPanel>
         </Grid>
@@ -29,7 +29,7 @@
                 <TextBox Header="Vægt i kg" PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Højde i cm" PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBlock Text="Fødselsdag" TextWrapping="Wrap"/>
-                <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat,Mode=OneWay}" TextWrapping="Wrap"/>
+                <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat,Mode=OneTime}" TextWrapping="Wrap"/>
             </StackPanel>
             <Button Content="Opdater bruger" Command="{x:Bind Path=BrugerVM.OpdaterKnap, Mode=OneWay}" Margin="71,458,0,0" VerticalAlignment="Top" ToolTipService.ToolTip="Opdaterer bruger på vores database" Width="121"/>
             <Button Content="Slet bruger" Margin="240,458,0,0" VerticalAlignment="Top" Width="121">
@@ -37,7 +37,7 @@
                     <Flyout>
                         <StackPanel>
                             <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="Bruger vil bliver fjernet for evigt samt med alt data er du sikker" Margin="0,0,0,12" />
-                            <Button Command="{x:Bind Path=BrugerVM.SletKnap, Mode=OneWay}" Click="Button_Click_4" Content="Ja, slet min bruger" />
+                            <Button Command="{x:Bind Path=BrugerVM.SletKnap, Mode=OneWay}" Click="Button_Click_logud" Content="Ja, slet min bruger" />
                         </StackPanel>
                     </Flyout>
                 </Button.Flyout>
