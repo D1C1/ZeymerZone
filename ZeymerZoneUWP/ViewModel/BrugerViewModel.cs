@@ -13,7 +13,7 @@ namespace ZeymerZoneUWP
 {
     public class BrugerViewModel : INotifyPropertyChanged
     {
-        public static Kunde _currentKunde;
+        private static Kunde _currentKunde;
         private string _status;
         private Kunde _tempKunde;
         private INavigationService _navigationService;
@@ -74,8 +74,7 @@ namespace ZeymerZoneUWP
             get
             {
 
-                return CurrentKunde.Kunde_foedeselsdag.ToString("dd mm yyyy");
-                    //$"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
+                return $"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
             }            
         }
         #endregion
