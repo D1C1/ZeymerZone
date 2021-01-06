@@ -78,8 +78,7 @@ namespace ZeymerZoneUWP
         public void GemVejleder()
         {
             PersistencyService<Vejleder>.GemData("vejleders", NewVejleder);
-            SetVejleder();
-            NewVejleder = null;
+            SetVejleder();          
         }
         /// <summary>
         /// Henter alle vejledere til OC
