@@ -120,14 +120,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="NavigationService.cs" />
-    <Compile Include="View\VejlederValgt.xaml.cs">
+    <Compile Include="View\VejlederViews\VejlederValgt.xaml.cs">
       <DependentUpon>VejlederValgt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VejlederMainPage.xaml.cs">
+    <Compile Include="View\VejlederViews\VejlederMainPage.xaml.cs">
       <DependentUpon>VejlederMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\VejlederViewModel.cs" />
-    <Compile Include="View\BrugerKonsultationer.xaml.cs">
+    <Compile Include="View\KlientViews\BrugerKonsultationer.xaml.cs">
       <DependentUpon>BrugerKonsultationer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Kalender.cs" />
@@ -136,7 +136,7 @@
     <Compile Include="Model\Kunde.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\Vejleder.cs" />
-    <Compile Include="View\Opretkonsultationer.xaml.cs">
+    <Compile Include="View\VejlederViews\Opretkonsultationer.xaml.cs">
       <DependentUpon>Opretkonsultationer.xaml</DependentUpon>
     </Compile>
     <Compile Include="PersistencyService.cs" />
@@ -145,28 +145,28 @@
     <Compile Include="ViewModel\KonsultationViewModel.cs" />
     <Compile Include="ViewModel\KostplanViewModel.cs" />
     <Compile Include="ViewModel\LogViewModel.cs" />
-    <Compile Include="View\BrugerKostplan.xaml.cs">
+    <Compile Include="View\KlientViews\BrugerKostplan.xaml.cs">
       <DependentUpon>BrugerKostplan.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BrugerLogs.xaml.cs">
+    <Compile Include="View\KlientViews\BrugerLogs.xaml.cs">
       <DependentUpon>BrugerLogs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainPageLoggetInd.xaml.cs">
+    <Compile Include="View\KlientViews\MainPageLoggetInd.xaml.cs">
       <DependentUpon>MainPageLoggetInd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Opretbruger.xaml.cs">
+    <Compile Include="View\KlientViews\Opretbruger.xaml.cs">
       <DependentUpon>Opretbruger.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OpretLog.xaml.cs">
+    <Compile Include="View\KlientViews\OpretLog.xaml.cs">
       <DependentUpon>OpretLog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Profilside.xaml.cs">
+    <Compile Include="View\KlientViews\Profilside.xaml.cs">
       <DependentUpon>Profilside.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LoginPage.xaml.cs">
+    <Compile Include="View\KlientViews\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainPage.xaml.cs">
+    <Compile Include="View\KlientViews\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,51 +195,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\VejlederValgt.xaml">
+    <Page Include="View\VejlederViews\VejlederValgt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\VejlederMainPage.xaml">
+    <Page Include="View\VejlederViews\VejlederMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BrugerKonsultationer.xaml">
+    <Page Include="View\KlientViews\BrugerKonsultationer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Opretkonsultationer.xaml">
+    <Page Include="View\VejlederViews\Opretkonsultationer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BrugerKostplan.xaml">
+    <Page Include="View\KlientViews\BrugerKostplan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BrugerLogs.xaml">
+    <Page Include="View\KlientViews\BrugerLogs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPageLoggetInd.xaml">
+    <Page Include="View\KlientViews\MainPageLoggetInd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Opretbruger.xaml">
+    <Page Include="View\KlientViews\Opretbruger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OpretLog.xaml">
+    <Page Include="View\KlientViews\OpretLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Profilside.xaml">
+    <Page Include="View\KlientViews\Profilside.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\LoginPage.xaml">
+    <Page Include="View\KlientViews\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPage.xaml">
+    <Page Include="View\KlientViews\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

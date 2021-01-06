@@ -56,5 +56,10 @@ namespace ZeymerZoneUWP
         {
             this.Frame.Navigate(typeof(BrugerLogs));
         }
+
+        private void Button_Click_logud(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }

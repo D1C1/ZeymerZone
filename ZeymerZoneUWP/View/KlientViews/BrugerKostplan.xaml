@@ -39,6 +39,7 @@
             <Button Content="Kostplan" Click="Button_Click_1" Margin="155,0,0,0" ToolTipService.ToolTip="Gå til dine kostplaner"/>
             <Button Content="Log" Margin="245,0,0,0" Click="Button_Click_2" ToolTipService.ToolTip="Opret og se nye logs"/>
             <Button Content="Konsultationer" Margin="305,0,0,0" Click="Button_Click_4" ToolTipService.ToolTip="Se dine konsultations tider"/>
+            <Button Content="Log Ud" Margin="0,0,12,0" Click="Button_Click_logud" ToolTipService.ToolTip="Her logger du ud" HorizontalAlignment="Right"/>
         </Grid>
         <Button Content="Vis Alle" Margin="10,384,0,0" Height="30" Width="110" Command="{x:Bind Mode=OneWay, Path=KostplanVM.AllDays}" VerticalAlignment="Top"/>
     </Grid>
