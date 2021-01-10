@@ -27,6 +27,7 @@ namespace ZeymerZoneUWP
         public MainPage()
         {
             PersistencyService<Kunde>.Makefile("KundeCurrent");
+            PersistencyService<Kunde>.HentData("Kundes");
             this.InitializeComponent();
 
             ApplicationView.PreferredLaunchViewSize = new Size(432, 768);
