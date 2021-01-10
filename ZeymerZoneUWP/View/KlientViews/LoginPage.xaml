@@ -14,7 +14,7 @@
             <TextBox Text="{x:Bind BrugerVM.Username, Mode=TwoWay}" PlaceholderText="Email" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Width="193"/>
             <Button Command="{x:Bind Path=BrugerVM.LoginKnap, Mode=OneWay}" ToolTipService.ToolTip="Forsøger at logge ind på database" Content="Login" Margin="0,495,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_3"/>
             <TextBox Text="{x:Bind BrugerVM.Password, Mode=TwoWay}" PlaceholderText="Password" HorizontalAlignment="Left" Margin="50,255,0,0" VerticalAlignment="Top" Width="193"/>
-            <TextBox HorizontalAlignment="Left" Margin="50,320,0,0" Text="Debug
+            <TextBox IsReadOnly="True" HorizontalAlignment="Left" Margin="50,320,0,0" Text="Debug
                                                                           Email: Herik45@gmail.com
                                                                           Password: Tester" TextWrapping="Wrap" VerticalAlignment="Top" Height="97" Width="214"/>
         </Grid>
