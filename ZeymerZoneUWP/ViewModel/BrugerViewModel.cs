@@ -93,11 +93,10 @@ namespace ZeymerZoneUWP
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         /// <summary>
         /// En metode til at sætte den nuværende kunde og gemme den kunde som er logget ind til disken
-        /// </summary>
-        /// <param name="username">kundens username</param>
-        /// <param name="password">kundens password</param>
+        /// </summary>      
         public async void SetKundeAsync()
         {
             ICollection<Kunde> Kunder = new List<Kunde>();
@@ -112,13 +111,7 @@ namespace ZeymerZoneUWP
                 }
             }
         }
-        /// <summary>
-        /// en funktion til knappen som udfører setkunde metoden
-        /// </summary>
-        public void Setkunde()
-        {
-            
-        }
+     
         /// <summary>
         /// Gemmer currentkunde
         /// </summary>
@@ -153,6 +146,7 @@ namespace ZeymerZoneUWP
             }else
             FoedselsdagFormat = $"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
         }
+
         public async void OpdaterKundeAsync()
         {
             PersistencyService<Kunde>.UpdateData("kundes", CurrentKunde, CurrentKunde.Kunde_Id);
