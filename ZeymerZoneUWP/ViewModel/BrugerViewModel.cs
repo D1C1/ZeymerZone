@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using Windows.System;
 
 namespace ZeymerZoneUWP
 {
@@ -24,7 +24,7 @@ namespace ZeymerZoneUWP
             //_tempKunde = new Kunde();
             _navigationService = new NavigationService();
             SetCurrent();
-            LoginKnap = new RelayCommand(Setkunde);// instantierer relaycommands
+            LoginKnap = new RelayCommand(SetKundeAsync);// instantierer relaycommands
             OpretKnap = new RelayCommand(Gemkunde);
             SletKnap = new RelayCommand(SletKunde);
             OpdaterKnap = new RelayCommand(OpdaterKundeAsync);
@@ -93,13 +93,13 @@ namespace ZeymerZoneUWP
         /// </summary>
         /// <param name="username">kundens username</param>
         /// <param name="password">kundens password</param>
-        public async void SetKundeAsync(string username, string password)
+        public async void SetKundeAsync()
         {
             ICollection<Kunde> Kunder = new List<Kunde>();
             Kunder = PersistencyService<ICollection<Kunde>>.HentData("kundes").Result;
             foreach (var item in Kunder)
             {
-                if (item.Kunde_email == username && item.Password == password)
+                if (item.Kunde_email == Username && item.Password == Password)
                 {
                     await PersistencyService<Kunde>.GemDataDisk(item, "KundeCurrent");
                     _navigationService.Navigate(typeof(MainPageLoggetInd));
@@ -112,7 +112,7 @@ namespace ZeymerZoneUWP
         /// </summary>
         public void Setkunde()
         {
-            SetKundeAsync(Username, Password);
+            
         }
         /// <summary>
         /// Gemmer currentkunde
