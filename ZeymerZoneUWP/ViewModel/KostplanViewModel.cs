@@ -87,12 +87,15 @@ namespace ZeymerZoneUWP
         public void SetKostplanDay(string day)
         {
             OC_Kostplaner.Clear();
+            /*
             var kostplanset = from k in Kostplaner
                               where k.Ugedag == day
                               select k;
             List<Kostplan> newlist = kostplanset.ToList();
+            */
+            List<Kostplan> newlist = Kostplaner.ToList();
 
-            foreach (var item in newlist.FindAll(e => e.Kunde_Id == CurrentKunde.Kunde_Id).ToList<Kostplan>())
+            foreach (var item in newlist.FindAll(k => k.Kunde_Id == CurrentKunde.Kunde_Id && k.Ugedag == day).ToList<Kostplan>())
             {   
                     OC_Kostplaner.Add(item);                    
             }

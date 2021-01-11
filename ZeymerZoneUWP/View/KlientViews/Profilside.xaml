@@ -28,8 +28,7 @@
                 <TextBox Header="Postnummer" PlaceholderText="Postnummer" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_postnr, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Vægt i kg" PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Højde i cm" PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.CurrentKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
-                <TextBlock Text="Fødselsdag" TextWrapping="Wrap"/>
-                <TextBlock Text="{x:Bind BrugerVM.FoedselsdagFormat,Mode=OneTime}" TextWrapping="Wrap"/>
+                <TextBox BorderThickness="0" Header="Fødselsdag" IsReadOnly='True' Text="{x:Bind BrugerVM.FoedselsdagFormat,Mode=TwoWay}" TextWrapping="Wrap"/>
             </StackPanel>
             <Button Content="Opdater bruger" Command="{x:Bind Path=BrugerVM.OpdaterKnap, Mode=OneWay}" Margin="71,458,0,0" VerticalAlignment="Top" ToolTipService.ToolTip="Opdaterer bruger på vores database" Width="121"/>
             <Button Content="Slet bruger" Margin="240,458,0,0" VerticalAlignment="Top" Width="121">

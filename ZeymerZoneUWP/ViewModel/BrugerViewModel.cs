@@ -13,10 +13,11 @@ namespace ZeymerZoneUWP
 {
     public class BrugerViewModel : INotifyPropertyChanged
     {
-        private static Kunde _currentKunde = new Kunde();
+        private Kunde _currentKunde;
         private string _status;
         private Kunde _tempKunde = new Kunde();
         private INavigationService _navigationService;
+        private string _foedselsdagFormat = "ikke sat";
 
         public BrugerViewModel()
         {
@@ -73,9 +74,13 @@ namespace ZeymerZoneUWP
         {
             get
             {
-
-                return $"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
-            }            
+                return _foedselsdagFormat;
+            }
+            set
+            {
+                _foedselsdagFormat = value;
+                NotifyPropertyChanged();
+            }
         }
         #endregion
 
@@ -142,6 +147,11 @@ namespace ZeymerZoneUWP
         private async void SetCurrent()
         {
             CurrentKunde = await PersistencyService<Kunde>.HentDataDisk("KundeCurrent");
+            if (CurrentKunde == null)
+            {
+
+            }else
+            FoedselsdagFormat = $"{CurrentKunde.Kunde_foedeselsdag.Date.Day}/{CurrentKunde.Kunde_foedeselsdag.Date.Month}-{CurrentKunde.Kunde_foedeselsdag.Date.Year}";
         }
         public async void OpdaterKundeAsync()
         {
