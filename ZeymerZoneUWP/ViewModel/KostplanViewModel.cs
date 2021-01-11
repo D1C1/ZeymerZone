@@ -95,7 +95,7 @@ namespace ZeymerZoneUWP
             */
             List<Kostplan> newlist = Kostplaner.ToList();
 
-            foreach (var item in newlist.FindAll(k => k.Kunde_Id == CurrentKunde.Kunde_Id && k.Ugedag == day).ToList<Kostplan>())
+            foreach (var item in newlist.FindAll(k => k.Kunde_Id == CurrentKunde.Kunde_Id && k.Ugedag == day))
             {   
                     OC_Kostplaner.Add(item);                    
             }
