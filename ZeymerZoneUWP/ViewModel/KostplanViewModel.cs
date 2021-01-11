@@ -93,7 +93,7 @@ namespace ZeymerZoneUWP
                               select k;
             List<Kostplan> newlist = kostplanset.ToList();
             */
-            List<Kostplan> newlist = Kostplaner.ToList();
+            List<Kostplan> newlist = Kostplaner.ToList();         
 
             foreach (var item in newlist.FindAll(k => k.Kunde_Id == CurrentKunde.Kunde_Id && k.Ugedag == day))
             {   
