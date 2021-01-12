@@ -38,6 +38,11 @@ namespace ZeymerZoneUWP
             get { return _status; }
             set { _status = value; NotifyPropertyChanged(); }
         }
+        public string StatusOprettet
+        {
+            get { return _status; }
+            set { _status = value; NotifyPropertyChanged(); }
+        }
         public Kunde CurrentKunde
         {
             get
@@ -122,14 +127,25 @@ namespace ZeymerZoneUWP
             if (TempKunde.Password != RepeatPassword)
             {
                 Status = "Password matcher ikke hinanden";
+                StatusOprettet = "Din bruger er ikke oprettet: Password matcher ikke hinanden";
             }
             else if (TempKunde.Password == null)
             {
                 Status = "Hovsa. Du SKAL lave et password";
+                StatusOprettet = "Din bruger er ikke oprettet: Du SKAL lave et password";
             }
             else
             {
-                PersistencyService<Kunde>.GemData("kundes", TempKunde);
+                try
+                {
+                    PersistencyService<Kunde>.GemData("kundes", TempKunde);
+                    StatusOprettet = "Din bruger er oprettet";
+                }
+                catch (Exception)
+                {
+                    StatusOprettet = "Udfyld venligst alle felter";
+                }
+                
             }
 
         }

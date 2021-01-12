@@ -27,7 +27,15 @@
                 <TextBox Header="Vægt i kg" PlaceholderText="Vægt i kg" Text="{x:Bind BrugerVM.TempKunde.Kunde_vaegt, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <TextBox Header="Højde i cm" PlaceholderText="Højde i cm" Text="{x:Bind BrugerVM.TempKunde.Kunde_hoejde, Mode=TwoWay}" TextWrapping="Wrap"/>
                 <DatePicker Date="{x:Bind BrugerVM.FoedselsdagOffset, Mode=TwoWay}" Header="Fødselsdag" Width="430"/>
-                <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}" ToolTipService.ToolTip="Opretter kunde på database"/>
+                <Button Content="Opret Bruger" Command="{x:Bind Path=BrugerVM.OpretKnap}" ToolTipService.ToolTip="Opretter kunde på database">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel>
+                                <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="{x:Bind BrugerVM.StatusOprettet, Mode=TwoWay}" Margin="0,0,0,12" />
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>
